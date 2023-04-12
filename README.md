@@ -11,8 +11,10 @@ Logo from [flaticon](https://www.flaticon.com/fr/)
 
 - Adapt fonts
 - adapt colors
-- change images
+- change images, maybe generated stuff
 - find cool stuff on templates HTML, CSS, JS to make my own site really
+- Share about cool libraries I use in my day to day work
+- Share dfg project, football with polars, maybe aoc
 
 Wanted theme :
 
