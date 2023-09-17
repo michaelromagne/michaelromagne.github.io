@@ -285,6 +285,35 @@ header {
 }
 
 
+.intro__social{
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 1.2em 0;
+    font-size: var(--fs-body);
+}
+
+.intro__social a { 
+    color: #111;
+    text-decoration: none;
+}
+
+.intro__social-list__link{
+    font-weight: var(--fw-bold);
+}
+
+.intro__social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0.8em 0 0;
+    padding: 0;
+}
+
+.intro__social-list__link:hover {
+    opacity: .7;
+    text-decoration: underline;
+}
+
 
 /*  My services section  */
 
@@ -394,12 +423,18 @@ header {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    border-radius: 30px;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .portfolio__img {
@@ -419,8 +454,40 @@ header {
     opacity: .5;
 }
 
-/* footer */
 
+/* Container holding the image and the text */
+.container_image_text {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 1.5rem;
+}
+ 
+/* Centered text */
+.centered_text {
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+    font-weight: var(--fw-bold);
+}
+
+
+.container_image_text:hover .centered_text {
+    visibility: visible;
+    opacity: 1;
+}
+.container_image_text:hover .portfolio__img {
+    transform: scale(1.12);
+    opacity: .5;
+}
+
+/* footer */
 .footer {
     background: #111;
     color: var(--clr-accent);
@@ -452,7 +519,7 @@ header {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
+    margin: 1.5em 0 0;
     padding: 0;
 }
 
