@@ -15,7 +15,7 @@
     
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #16e0a7;
     
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -384,7 +384,7 @@ header {
 @media (min-width: 600px) {
     .about-me {
         display: grid;
-        grid-template-columns: 1fr 200px;
+        grid-template-columns: 1fr 250px;
         grid-template-areas: 
             "title img"
             "subtitle img"
@@ -411,6 +411,10 @@ header {
         position: relative;
         z-index: 2;
     }
+}
+
+.about_me__social-list__link{
+    font-weight: var(--fw-body);
 }
 
 /* My Work */
