@@ -106,7 +106,7 @@ TxtType.prototype.tick = function() {
   this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
   var that = this;
-  var delta = 200 - Math.random() * 100;
+  var delta = 100 - Math.random() * 50;
 
   if (this.isDeleting) { delta /= 2; }
 
@@ -133,8 +133,8 @@ window.onload = function() {
         new TxtType(elements[i], JSON.parse(toRotate), period);
       }
   }
-  // INJECT CSS
   var css = document.createElement("style");
   css.type = "text/css";
   document.body.appendChild(css);
 };
+
