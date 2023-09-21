@@ -1,6 +1,6 @@
 # michaelromagne.github.io
 
-My Data Science portfolio website.
+Data Science portfolio website.
 
 Inspiration taken from : 
 - Kevin Powell [course on Scrimba](https://scrimba.com/learn/portfolio)
