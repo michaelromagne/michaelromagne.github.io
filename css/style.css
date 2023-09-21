@@ -14,7 +14,7 @@
     --fw-bold: 900;
     
     --clr-light: #fff;
-    --clr-dark: #16152c;
+    --clr-dark: #05041a;
     --clr-grey: #7b7a7a;
     --clr-accent: #16e0a7;
     
@@ -321,6 +321,7 @@ header {
     background-color: var(--clr-dark);
     background-image: url(../img/fuji.jpg);
     background-size: cover;
+    background-position: center;
     /* background-blend-mode: multiply; */
     color: var(--clr-light);
     text-align: center;
@@ -353,6 +354,7 @@ header {
 }
 
 
+
 .section__title--skills {
     color: var(--clr-accent);
     position: relative;
@@ -360,7 +362,7 @@ header {
 
 .skills-container{
     display: grid;
-    grid-tempLate-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-tempLate-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content:center;
     align-items:center;
     text-align: center;
@@ -371,10 +373,16 @@ header {
 
 .skills-box{
     padding: 1rem;
-    color: #000;
+    color: var(--clr-light);
     cursor:pointer;
-    max-width: 200px;
+    max-width: 300px;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    margin: 0 auto;
 }
 
 .skills-box:hover .skills-img{
@@ -388,7 +396,6 @@ header {
     flex-direction: column;
     align-items:center;
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
     position: relative;
     color:  #2ecc71;
     margin-top: 0.5rem;
@@ -499,6 +506,8 @@ header {
     background: var(--clr-accent);
     overflow: hidden;
     border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .portfolio__img {
@@ -513,6 +522,7 @@ header {
 }
 
 /* Style for the tag filter buttons */
+
 .tag-filter {
     display: inline-block;
     padding: 0.25em 0.5em;
