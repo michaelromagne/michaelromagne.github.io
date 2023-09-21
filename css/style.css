@@ -62,10 +62,6 @@ img {
 
 strong { font-weight: var(--fw-bold) }
 
-:focus {
-    outline: 3px solid var(--clr-accent);
-    outline-offset: 3px;
-}
 
 /* Buttons */
 
@@ -447,17 +443,71 @@ header {
         opacity 250ms linear;
 }
 
-.portfolio__item:focus {
-    position: relative;
-    z-index: 2;
-}
-
-.portfolio__img:hover,
-.portfolio__item:focus .portfolio__img {
+.portfolio__img:hover .portfolio__img {
     transform: scale(1.12);
     opacity: .5;
 }
 
+/* Style for the tag filter buttons */
+.tag-filter {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: 3px solid var(--clr-accent);
+}
+
+.tag-filter:hover {
+    transform: scale(0.975);
+    opacity: .9;
+}
+
+.tag-filter.active {
+    background-color: var(--clr-accent); /* Active filter button color */
+}
+
+/* Style for the tags within the portfolio items */
+
+.portfolio__tags {
+    position: absolute;
+    top: 10px; /* Adjust the top distance as needed */
+    left: 10px; /* Adjust the left distance as needed */
+    z-index: 1; /* Ensure the tags appear above the image */
+    display: flex; /* Align tags horizontally */
+  }
+  
+  .portfolio__tag {
+    background-color: var(--clr-accent);
+    color: #ffffff;
+    padding: 0.25em 0.5em;
+    border-radius: 20px;
+    margin-right: 8px; /* Adjust the margin as needed */
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+/* Style for the "Show All" button */
+.show-all-button {
+    display: inline-block;
+    margin-right: 0.5em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--clr-accent);
+}
+
+.show-all-button:hover {
+    text-decoration: underline;
+}
 
 /* Container holding the image and the text */
 .container_image_text {

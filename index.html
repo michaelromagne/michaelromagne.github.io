@@ -102,7 +102,7 @@
         <!-- About me -->
         <section class="about-me" id="about">
             <h2 class="section__title section__title--about">Who I am</h2>
-            <p class="section__subtitle section__subtitle--about">A breton based in Paris</p>
+            <p class="section__subtitle section__subtitle--about">A breton MLE based in Paris</p>
 
             <div class="about-me__body">
                 <div id="about-me-content"></div>
@@ -115,29 +115,49 @@
         <section class="my-work" id="work">
             <h2 class="section__title section__title--work">My projects</h2>
             <p class="section__subtitle section__subtitle--work"></p>
+            
+            <div class="portfolio__filters">
+                <button class="tag-filter" data-tag="Fraud Detection">Fraud Detection</button>
+                <button class="tag-filter" data-tag="Deep Learning">Deep Learning</button>
+                <button class="tag-filter" data-tag="Machine Learning">Machine Learning</button>
+            </div>
+            
+            <button class="show-all-button">Show All</button>
 
             <div class="portfolio">
                 <!-- portfolio item 1 -->
-                <a href="portfolio-item.html" class="portfolio__item">
+                <a href="portfolio-item.html" class="portfolio__item" data-tags="Fraud Detection,Deep Learning">
                     <div class="container_image_text">
                         <img src="img/laptop.jpg" alt="" class="portfolio__img">
-                        <p class="centered_text">Centered</p>
-                    </div> 
+                        <div class="portfolio__tags">
+                            <span class="portfolio__tag">Fraud Detection</span>
+                            <span class="portfolio__tag">Deep Learning</span>
+                        </div> 
+                        <p class="centered_text">Centered 1</p>
+                    </div>   
                 </a>
 
                 <!-- portfolio item 2 -->
-                <a href="portfolio-item.html" class="portfolio__item">
+                <a href="portfolio-item.html" class="portfolio__item" data-tags="Fraud Detection,Deep Learning">
                     <div class="container_image_text">
                         <img src="img/laptop.jpg" alt="" class="portfolio__img">
-                        <p class="centered_text">Centered</p>
+                        <div class="portfolio__tags">
+                            <span class="portfolio__tag">Fraud Detection</span>
+                            <span class="portfolio__tag">Deep Learning</span>
+                        </div> 
+                        <p class="centered_text">Centered 2</p>
                     </div> 
                 </a>
 
                 <!-- portfolio item 3 -->
-                <a href="portfolio-item.html" class="portfolio__item">
+                <a href="portfolio-item.html" class="portfolio__item" data-tags="Fraud Detection,Machine Learning">
                     <div class="container_image_text">
                         <img src="img/laptop.jpg" alt="" class="portfolio__img">
-                        <p class="centered_text">Centered</p>
+                        <div class="portfolio__tags">
+                            <span class="portfolio__tag">Fraud Detection</span>
+                            <span class="portfolio__tag">Machine Learning</span>
+                        </div> 
+                        <p class="centered_text">Centered 3</p>
                     </div> 
                 </a>
             </div>

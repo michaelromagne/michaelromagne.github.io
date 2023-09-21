@@ -1,8 +1,7 @@
-I'm a MLE (or Data Scientist with coding skills) with a strong mathematical background, a problem-solving mindset and a passion for Football.
+I'm a MLE (Machine Learning Engineer, or Data Scientist with coding skills) with a strong mathematical background, a problem-solving mindset and a passion for Football.
 
-My path to data science emerged when I realized the vast potential of applying mathematical concepts to real-world challenges. I particularly honed my skills at Ubisoft, where I spent three years deploying machine learning models to combat in-game fraudulent transactions, a role that allowed me to manage end-to-end machine learning projects.
+My path to Data Science emerged when I realized the vast potential of applying mathematical concepts to real-world challenges. I particularly improved my skills at Ubisoft, where I spent three years deploying machine learning models to combat in-game fraudulent transactions, a role that allowed me to manage end-to-end machine learning projects.
 
 I am excited to start my next adventure as a MLE at GitGuardian, a leading company in the Cybersecurity domain, where I will be leveraging ML capabilities to analyze source code and help companies secure their infrastructure.
 
-In the meantime, I am developing personal projects related to "The Beautiful Game". I also love playing Football, going the Gym, reading Philosophy, History, Economy or Sci-Fi books or hang out in Paris or elsewhere. If you want to have a talk about some projects or about Football Analytics in general, please contact me at <a href="mailto:michael.romagne@gmail.com" class="about_me__social-list__link">michael.romagne@gmail.com</a>.
-
+In the meantime, I am developing personal projects related to Football. I also love playing it every week, going to the Gym, reading books or hang out with friends in Paris or elsewhere. If you want to have a talk about some projects or about Football Analytics in general, please contact me at <a href="mailto:michael.romagne@gmail.com" class="about_me__social-list__link">michael.romagne@gmail.com</a>.
