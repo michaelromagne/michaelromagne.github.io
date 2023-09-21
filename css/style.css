@@ -14,7 +14,8 @@
     --fw-bold: 900;
     
     --clr-light: #fff;
-    --clr-dark: #303030;
+    --clr-dark: #16152c;
+    --clr-grey: #7b7a7a;
     --clr-accent: #16e0a7;
     
     --fs-h1: 3rem;
@@ -250,6 +251,10 @@ header {
     display: inline-block;
 }
 
+.typewrite { 
+    border-right: 0.08em solid var(--clr-dark)
+}
+
 @media (min-width: 600px) {
     .intro {
         display: grid;
@@ -309,6 +314,7 @@ header {
     opacity: .7;
     text-decoration: underline;
 }
+
 
 
 /*  My services section  */
@@ -429,6 +435,8 @@ header {
     padding-top: 1em;
     padding-left: 2em;
     padding-right: 2em;
+    margin: 0 auto;
+    max-width: 1500px;
 }
 
 .portfolio__item {
@@ -461,34 +469,37 @@ header {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    outline: 3px solid var(--clr-accent);
+    outline: 3px solid var(--clr-grey);
 }
 
 .tag-filter:hover {
     transform: scale(0.975);
     opacity: .9;
+    outline: 3px solid var(--clr-accent);
+    transition: 0.2s;
 }
 
 .tag-filter.active {
-    background-color: var(--clr-accent); /* Active filter button color */
+    background-color: var(--clr-accent);
+    outline: 3px solid var(--clr-accent);
 }
 
 /* Style for the tags within the portfolio items */
 
 .portfolio__tags {
     position: absolute;
-    top: 10px; /* Adjust the top distance as needed */
-    left: 10px; /* Adjust the left distance as needed */
-    z-index: 1; /* Ensure the tags appear above the image */
-    display: flex; /* Align tags horizontally */
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+    display: flex;
   }
   
   .portfolio__tag {
     background-color: var(--clr-accent);
     color: #ffffff;
-    padding: 0.25em 0.5em;
+    padding: 0.1em 0.5em;
     border-radius: 20px;
-    margin-right: 8px; /* Adjust the margin as needed */
+    margin-right: 8px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
@@ -498,15 +509,29 @@ header {
 /* Style for the "Show All" button */
 .show-all-button {
     display: inline-block;
+    padding: 0.25em 0.5em;
+    margin-left: 0.5em;
     margin-right: 0.5em;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    margin-bottom: 1em;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
-    color: var(--clr-accent);
+    transition: background-color 0.3s ease;
+    outline: 3px solid var(--clr-grey);
 }
 
 .show-all-button:hover {
-    text-decoration: underline;
+    transform: scale(0.975);
+    opacity: .9;
+    outline: 3px solid var(--clr-accent);
+    transition: 0.2s;
+}
+
+.show-all-button.active {
+    background-color: var(--clr-accent);
+    outline: 3px solid var(--clr-accent);
 }
 
 /* Container holding the image and the text */
