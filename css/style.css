@@ -507,9 +507,12 @@ header {
     background: var(--clr-accent);
     overflow: hidden;
     border-radius: 10px;
-    max-width: 500px;
     margin: 0 auto;
-    height: 420px /* Update height according to articles summaries length */
+    min-width: 330px;
+    max-width : 400px;
+    min-height: 370px;
+    max-height: 400px;
+    transition: transform 0.5s ease; /* Add a smooth transition for the hover effect */
 }
 
 .portfolio__item:hover {
@@ -517,28 +520,23 @@ header {
     transition: 0.5s;
 }
 
+
 .portfolio__overlay {
     position: absolute;
-    bottom: -150px; /* Lower white overlay */
+    bottom: 0; /* Lower white overlay */
     left: 0;
     width: 100%;
     background-color: white;
-    opacity: 1;
     padding: 10px;
     box-sizing: border-box;
     transition: opacity 0.3s;
     border-radius: 10px;
-    z-index: 1;
 }
 
-.portfolio__overlay:hover {
-    opacity: 1;
-}
 
 .portfolio__content {
     text-align: left;
 }
-
 .portfolio__title {
     font-size: 18px;
     margin: 5px 0;
