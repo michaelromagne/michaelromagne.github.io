@@ -448,7 +448,7 @@ header {
 @media (min-width: 600px) {
     .about-me {
         display: grid;
-        grid-template-columns: 1fr 250px;
+        grid-template-columns: 1fr 300px;
         grid-template-areas: 
             "title img"
             "subtitle img"
@@ -671,7 +671,7 @@ header {
 
 
 
-.container_image_text:hover .portfolio__img {
+.portfolio__item:hover .portfolio__img {
     transform: scale(1.075);
     opacity: .5;
 }
