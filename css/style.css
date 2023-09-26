@@ -14,9 +14,9 @@
     --fw-bold: 900;
     
     --clr-light: #fff;
-    --clr-dark: #05041a;
+    --clr-dark: #1e3451;
     --clr-grey: #7b7a7a;
-    --clr-accent: #16e0a7;
+    --clr-accent: #35e3b2;
     
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -265,6 +265,8 @@ header {
             "img title"
             "img subtitle";
         grid-template-columns: min-content max-content;
+        padding-top: 200px;
+        padding-bottom: 200px;
     }
     
     .intro__img {
