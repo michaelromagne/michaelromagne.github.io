@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5MVLG6VZP"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-R5MVLG6VZP');
+        </script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Data Science portfolio website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+            integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:400,900&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                Combat fraudsters <strong> at Ubisoft</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Limit frauds for online merchants.</p>
+            <img src="img/generated_stuff/hacker.png" alt="" class="intro__img">
+            <p class="portfolio__info">Duration: 5 min | Date: Sept 22, 2023</p>
+        </section>
+        
+        <div class="portfolio-item-individual">
+            <p>
+                For the last 3 years, I have mostly been working on a Fraud Detection use case at Ubisoft.
+                The objective of the project is to analyze in-game transactions on PC in real time, and block the ones that are too risky.
+                Which risk are we talking about ? In short, big chargeback fees, a lower acceptance rate and a bad reputation.
+            </p>
+
+            <h2>The risk of Fraud</h2>
+                <img src="img/c3po.jpg" width="400px">
+            <p>
+                Bank chargebacks : fees and exponential growth
+            </p>
+
+            <h2>How do we tackle it ?</h2>
+
+            Components : Platform hosted on AWS, Feature store with spark flows, and a ML model (xgboost).
+            
+            
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe et amet tenetur! Fugit sequi optio corrupti fugiat ducimus consequatur incidunt?</p>
+            <p>Voluptatibus, soluta blanditiis! Incidunt ea unde itaque illo molestiae eligendi sint culpa nobis voluptas sapiente voluptate, magnam ipsum eius earum?</p>
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="mailto:michael.romagne@gmail.com" class="footer__link">michael.romagne@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/micha%C3%ABl-romagn%C3%A9/">
+                        <i class="fab fa-linkedin"></i>
+                </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/MichaelRomagne">
+                    <i class="fab fa-github"></i>
+                </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://twitter.com/MichaelRomagne">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="js/index.js"></script>
+        
+    </body>
+</html>

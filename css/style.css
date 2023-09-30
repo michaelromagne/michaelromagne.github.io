@@ -265,8 +265,8 @@ header {
             "img title"
             "img subtitle";
         grid-template-columns: min-content max-content;
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     
     .intro__img {
@@ -569,6 +569,12 @@ header {
     opacity: .5;
 }
 
+.portfolio__info {
+    font-size: 13px;
+    color: var(--clr-dark);
+    margin-top: 10px;
+}
+
 /* Style for the tag filter buttons */
 
 .tag-filter {
@@ -733,7 +739,7 @@ header {
     margin: 0 auto;
 }
 .portfolio-item-individual p {
-    max-width: 600px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
