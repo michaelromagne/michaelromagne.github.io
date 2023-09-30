@@ -743,3 +743,21 @@ header {
     margin-left: auto;
     margin-right: auto;
 }
+
+.container-image-right {
+    display: flex;
+    width: 100%;
+}
+
+image {
+    align-items: right;
+    max-width: 100%;
+    min-width: 350px;
+    max-height:100%;
+    margin-left: 100px;
+    padding-left: 100px;
+}
+
+.text-image {
+    padding-right: 20px;
+}

@@ -51,33 +51,101 @@
             <h1 class="section__title section__title--intro">
                 Combat fraudsters <strong> at Ubisoft</strong>
             </h1>
-            <p class="section__subtitle section__subtitle--intro">Limit frauds for online merchants.</p>
+            <p class="section__subtitle section__subtitle--intro">Limit fraud for online merchants.</p>
             <img src="img/generated_stuff/hacker.png" alt="" class="intro__img">
             <p class="portfolio__info">Duration: 5 min | Date: Sept 22, 2023</p>
         </section>
         
         <div class="portfolio-item-individual">
+
             <p>
-                For the last 3 years, I have mostly been working on a Fraud Detection use case at Ubisoft.
-                The objective of the project is to analyze in-game transactions on PC in real time, and block the ones that are too risky.
-                Which risk are we talking about ? In short, big chargeback fees, a lower acceptance rate and a bad reputation.
+                For the last 3 years, I have immersed myself in the Gaming World at Ubisoft,
+                working on a Fraud Detection use case. <br>The primary objective of the project is 
+                to block e-commerce transactions deemed too risky in real time.
+
+                <br><strong>But what risks are we talking about ?</strong> In this article, I will describe how online
+                merchants can lose a lot of money and tarnish its reputation due to e-commerce frauds and how
+                we used Machine Learning to mitigate risk at Ubisoft.
             </p>
-
-            <h2>The risk of Fraud</h2>
-                <img src="img/c3po.jpg" width="400px">
-            <p>
-                Bank chargebacks : fees and exponential growth
-            </p>
-
-            <h2>How do we tackle it ?</h2>
-
-            Components : Platform hosted on AWS, Feature store with spark flows, and a ML model (xgboost).
-            
-            
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe et amet tenetur! Fugit sequi optio corrupti fugiat ducimus consequatur incidunt?</p>
-            <p>Voluptatibus, soluta blanditiis! Incidunt ea unde itaque illo molestiae eligendi sint culpa nobis voluptas sapiente voluptate, magnam ipsum eius earum?</p>
-        </div>
         
+            <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud</h2>
+            
+            <div class="container-image-right">
+                
+                <div class="text-image">
+                  <p>Bank chargebacks pose a significant threat, accompanied by the specter of 
+                    escalating fees and exponential growth. Understanding and mitigating this 
+                    risk has been a pivotal aspect of our fraud detection initiative.
+                    Bank chargebacks pose a significant threat, accompanied by the specter of 
+                    escalating fees and exponential growth. Understanding and mitigating this 
+                    risk has been a pivotal aspect of our fraud detection initiative. 
+                    Bank chargebacks pose a significant threat, accompanied by the specter of 
+                    escalating fees and exponential growth. Understanding and mitigating this 
+                    risk has been a pivotal aspect of our fraud detection initiative.
+                    Bank chargebacks pose a significant threat, accompanied by the specter of 
+                    escalating fees and exponential growth. Understanding and mitigating this 
+                    risk has been a pivotal aspect of our fraud detection initiative.
+                </p>
+                </div>
+                <div class="image">
+                    <img src="img/brassens.jpg" width="550px" alt="Mauvaise réputation" style="margin-top: 5px; padding-top: 10px;">
+                </div>
+            </div>
+
+            <p>Bank chargebacks pose a significant threat, accompanied by the specter of 
+                escalating fees and exponential growth. Understanding and mitigating this 
+                risk has been a pivotal aspect of our fraud detection initiative
+                Bank chargebacks pose a significant threat, accompanied by the specter of 
+                escalating fees and exponential growth. Understanding and mitigating this 
+                risk has been a pivotal aspect of our fraud detection initiative</p>
+
+              
+         
+        
+            <h2 style="margin-top: 50px; font-size:40px;">How Do We Tackle It?</h2>
+            <p>
+                First, historically the first system used at Ubisoft was a big rule based system.
+                On the one hand, rule based systems decisions are easy to explain if a customer complains and
+                are rule sets are pretty simple so the fraud check is very quick.
+
+                Our approach involves a robust set of components:
+            </p>
+            <ul>
+                <li>Platform hosted on AWS</li>
+                <li>Feature store with Spark flows</li>
+                <li>Implementation of an ML model (XGBoost)</li>
+            </ul>
+            
+            <h2 style="margin-top: 50px; font-size:40px;">What Machine Learning brang to Fraud Detection performances ?</h2>
+            <h3 style="margin-top: 50px;">Key Metrics and Impact</h3>
+            <p>
+                As said in the first part, we aimed at replacing a third party tool, 
+                that is a rule based fraud detection system.
+                The success of our project is reflected in key metrics such as a notable gain in net sales, 
+                the efficiency of our tech stack, and the valuable time saved by fraud experts.
+                Also, we noticed several capital human errors made on the rule based system.
+            </p>
+        
+            <h3 style="margin-top: 50px;">Control Group and AB Test</h3>
+            <p>
+                To estimate gains accurately, we implemented a controlled experiment using a Control Group and AB testing methodology. This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
+            </p>
+        
+            <h3 style="margin-top: 50px;">Model Implementation and Explainability</h3>
+            <p>
+                Our approach combines the power of XGBoost with explainability tools like explainerdashboards. This ensures that the model not only detects fraud effectively but also provides insights into its decision-making process.
+            </p>
+        
+            <h3 style="margin-top: 50px;">AWS Platform and Tableau Dashboards</h3>
+            <p>
+                Leveraging the capabilities of the AWS platform, our fraud detection system is hosted on a scalable and secure infrastructure. Tableau dashboards provide intuitive visualizations for monitoring and analysis.
+            </p>
+        
+            <h3 style="margin-top: 50px;">Exploration of One-Class Supervised Learning</h3>
+            <p>
+                As part of our continuous improvement, we delved into research on one-class supervised learning and semi-supervised techniques, exploring innovative approaches to enhance our fraud detection capabilities.
+            </p>
+        </div>
         
         <!-- Footer -->
         <footer class="footer">
