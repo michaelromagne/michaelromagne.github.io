@@ -67,9 +67,14 @@
                 working on a Fraud Detection use case. <br>The primary objective of the project is 
                 to block e-commerce transactions deemed too risky in real time.
 
-                <br><strong>But what risks are we talking about ?</strong> In this article, I will describe how online
-                merchants can lose a lot of money and tarnish its reputation due to e-commerce frauds and how
-                we used Machine Learning to mitigate risk at Ubisoft.
+                <br><strong>But what risks are we talking about ?</strong> Let's discover how online
+                merchants can lose big money and tarnish their reputation due to e-commerce frauds and how
+                we leveraged Machine Learning at Ubisoft to tackle these issues.
+
+                <br> Detail challenges that lead to solutions below : SLA with low latency, labels
+                not available if we block the transaction, label latency due to chargeback workflow,
+                high class imbalance... Big sandbox for ML practicioners, at least junior ones.
+                Ideal subject to learn and grow as it's down to earth and critical for business.
             </p>
         
             <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud</h2>
@@ -77,34 +82,21 @@
             <div class="container-image-right">
                 
                 <div class="text-image">
-                  <p>Bank chargebacks pose a significant threat, accompanied by the specter of 
+                    <p>First and foremost, we should define what is a fraud in e-commerce. (chargeback flow picture)</p>
+
+                    <p>It can come from a lot of different means : (see mendeleiev fraud + prez mlgroup 4 blocks)</p>
+                  
+                    <p>Bank chargebacks pose a significant threat, accompanied by the specter of 
                     escalating fees and exponential growth. Understanding and mitigating this 
                     risk has been a pivotal aspect of our fraud detection initiative.
-                    Bank chargebacks pose a significant threat, accompanied by the specter of 
-                    escalating fees and exponential growth. Understanding and mitigating this 
-                    risk has been a pivotal aspect of our fraud detection initiative. 
-                    Bank chargebacks pose a significant threat, accompanied by the specter of 
-                    escalating fees and exponential growth. Understanding and mitigating this 
-                    risk has been a pivotal aspect of our fraud detection initiative.
-                    Bank chargebacks pose a significant threat, accompanied by the specter of 
-                    escalating fees and exponential growth. Understanding and mitigating this 
-                    risk has been a pivotal aspect of our fraud detection initiative.
-                </p>
+                    </p>
                 </div>
                 <div class="image">
                     <img src="img/fraud_article/brassens.jpg" width="550px" alt="Mauvaise réputation" style="margin-top: 5px; padding-top: 10px;">
                 </div>
             </div>
 
-            <p>Bank chargebacks pose a significant threat, accompanied by the specter of 
-                escalating fees and exponential growth. Understanding and mitigating this 
-                risk has been a pivotal aspect of our fraud detection initiative
-                Bank chargebacks pose a significant threat, accompanied by the specter of 
-                escalating fees and exponential growth. Understanding and mitigating this 
-                risk has been a pivotal aspect of our fraud detection initiative</p>
-
-              
-         
+            <p></p>    
         
             <h2 style="margin-top: 50px; font-size:40px;">How Do We Tackle It?</h2>
             <p>
@@ -118,6 +110,7 @@
                 <li>Platform hosted on AWS</li>
                 <li>Feature store with Spark flows</li>
                 <li>Implementation of an ML model (XGBoost)</li>
+                <li>Big Monitoring (Tableau, Grafana)</li>
             </ul>
             
             <h2 style="margin-top: 50px; font-size:40px;">What Machine Learning brang to Fraud Detection performances ?</h2>
@@ -137,18 +130,37 @@
         
             <h3 style="margin-top: 50px;">Model Implementation and Explainability</h3>
             <p>
-                Our approach combines the power of XGBoost with explainability tools like explainerdashboards. This ensures that the model not only detects fraud effectively but also provides insights into its decision-making process.
+                Our approach combines the power of XGBoost with explainability tools like <strong>explainerdashboards.</strong> 
+                This ensures that the model not only detects fraud effectively 
+                but also provides insights into its decision-making process.
+                On top of that, we added unit tests on ML model performances
+                (find an article on why ML models should be tested like classical software)
             </p>
         
             <h3 style="margin-top: 50px;">AWS Platform and Tableau Dashboards</h3>
             <p>
-                Leveraging the capabilities of the AWS platform, our fraud detection system is hosted on a scalable and secure infrastructure. Tableau dashboards provide intuitive visualizations for monitoring and analysis.
+                Leveraging the capabilities of the AWS platform, our fraud detection system is
+                hosted on a scalable and secure infrastructure. Tableau dashboards provide intuitive 
+                visualizations for monitoring and analysis.
             </p>
         
+            <h3 style="margin-top: 50px;">MLE experiment environment details</h3>
+
             <h3 style="margin-top: 50px;">Exploration of One-Class Supervised Learning</h3>
             <p>
-                As part of our continuous improvement, we delved into research on one-class supervised learning and semi-supervised techniques, exploring innovative approaches to enhance our fraud detection capabilities.
+                As part of our continuous improvement, we delved into research on one-class supervised 
+                learning and semi-supervised techniques, exploring innovative approaches to enhance our 
+                fraud detection capabilities. In the end too complex and no big added value on tabular data.
+                But that was nice to work on something different.
             </p>
+
+            <h3 style="margin-top: 50px;">In the end, come back to a rule engine ?</h3>
+            <p>
+                Fp-growth, power in the end of fraud experts instead of ml teams who deploy ml models,
+                smart rule engine periodically retrained and rules proposed.
+                https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/ 
+            </p>
+
         </div>
         
         <!-- Footer -->
