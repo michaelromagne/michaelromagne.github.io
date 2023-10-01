@@ -71,30 +71,52 @@
                 merchants can lose big money and tarnish their reputation due to e-commerce frauds and how
                 we leveraged Machine Learning at Ubisoft to tackle these issues.
 
-                <br> Detail challenges that lead to solutions below : SLA with low latency, labels
-                not available if we block the transaction, label latency due to chargeback workflow,
-                high class imbalance... Big sandbox for ML practicioners, at least junior ones.
-                Ideal subject to learn and grow as it's down to earth and critical for business.
             </p>
         
             <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud</h2>
-            
-            <div class="container-image-right">
                 
-                <div class="text-image">
-                    <p>First and foremost, we should define what is a fraud in e-commerce. (chargeback flow picture)</p>
+            <p>First and foremost, we should define what is a Fraud.</p>
+            
+            <img src="img/fraud_article/cgb.PNG" width="700px" alt="Chargeback" style="margin-top: 5px; padding-top: 10px;">
 
-                    <p>It can come from a lot of different means : (see mendeleiev fraud + prez mlgroup 4 blocks)</p>
-                  
-                    <p>Bank chargebacks pose a significant threat, accompanied by the specter of 
-                    escalating fees and exponential growth. Understanding and mitigating this 
-                    risk has been a pivotal aspect of our fraud detection initiative.
-                    </p>
-                </div>
-                <div class="image">
-                    <img src="img/fraud_article/brassens.jpg" width="550px" alt="Mauvaise réputation" style="margin-top: 5px; padding-top: 10px;">
-                </div>
-            </div>
+            <p>Let's assume a transaction made by a shopper in Ubisoft e-commerce ecosystem. 
+                Ubisoft receives funds, the goods are delivered, the player can have fun.
+                For most transactions, that's it.
+                However in rare cases, several weeks or months later, a cardholder may be surprised
+                with a Ubisoft charge on his bank account and dispute it to his bank.
+                
+                In that case, the bank will initiate a <strong>chargeback</strong>,
+                that will be sent to Ubisoft through the card network. If Ubisoft can not show 
+                that the chargeback is an abuse from the cardholder, they have to return the funds 
+                to the cardholder, with additional chargeback fees charged by the Payment Service Provider 
+                (15euros in case of Paypal, 20 euros in case of Worldpay). On top of that, many products 
+                can not be withdrawn from the fraudster (shopper) player account, like Virtual Currency products 
+                that are not revocable. Virtual currency packs represent 80 to 90 % of the transactions we handle 
+                in this project and have a big success with players, thus are highly targeted by malicious customers.
+                The malicious actors can then sell your products at a very low price and gain a good margin.
+                
+            </p>
+
+
+            <p>You can now imagine how this money can be used in the end, to isolated fraudsters trying to
+                earn easy money to organized groups willing to finance criminal organisations.
+                It can come from a lot of different means : (see mendeleiev fraud + prez mlgroup 4 blocks)</p>
+            
+            <p>Bank chargebacks pose a significant threat (exponential growth for business),
+            try to be the best compared to other actors in e-commerce, not totally fraud-proof.
+            accompanied by the specter of escalating fees and exponential growth. 
+            Understanding and mitigating this risk has been a pivotal aspect of our fraud detection initiative.
+
+            Grey market : Money laundering, soft money.
+
+            With this perspective, we now can rephrase our problematic for this project :
+            <strong>How can we keep the chargeback rate under control ?</strong>
+            
+            Detail challenges that lead to ML solutions below : SLA with low latency, labels
+            not available if we block the transaction, label latency due to chargeback workflow,
+            high class imbalance... Big sandbox for ML practicioners, at least junior ones.
+            Ideal subject to learn and grow as it's down to earth and critical for business.
+            </p>
 
             <p></p>    
         
@@ -121,6 +143,7 @@
                 The success of our project is reflected in key metrics such as a notable gain in net sales, 
                 the efficiency of our tech stack, and the valuable time saved by fraud experts.
                 Also, we noticed several capital human errors made on the rule based system.
+                Lastly, we replaced the third party tool on 80% of transactions, so a total of 200k euros per day on average.
             </p>
         
             <h3 style="margin-top: 50px;">Control Group and AB Test</h3>
