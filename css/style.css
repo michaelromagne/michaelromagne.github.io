@@ -321,7 +321,7 @@ header {
 /* Skills Section */
 .my-skills {
     background-color: var(--clr-dark);
-    background-image: url(../img/fuji.jpg);
+    background-image: url(../img/midjourney.png);
     background-size: cover;
     background-position: center;
     /* background-blend-mode: multiply; */
@@ -358,7 +358,7 @@ header {
 
 
 .section__title--skills {
-    color: var(--clr-accent);
+    color: var(--clr-dark);
     position: relative;
 }
 
@@ -398,8 +398,14 @@ header {
     align-items:center;
     padding: 0.5rem;
     position: relative;
-    color:  #2ecc71;
+    color:  var(--clr-accent);
     margin-top: 0.5rem;
+}
+
+.skills-text{
+    color:  var(--clr-accent);
+    font-size: 1.15rem;
+    font-weight: 500;
 }
     
     
