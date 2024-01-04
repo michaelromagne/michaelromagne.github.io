@@ -371,6 +371,7 @@ header {
     grid-gap:1rem;
     padding: 1rem 80px;
     font-size: 1.2rem;
+    margin-bottom: 3rem;
 }
 
 .skills-box{
@@ -384,6 +385,9 @@ header {
     text-align: center;
     height: 300px;
     margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10%;
+    opacity: 90%;
 }
 
 .skills-box:hover .skills-img{
@@ -398,14 +402,15 @@ header {
     align-items:center;
     padding: 0.5rem;
     position: relative;
-    color:  var(--clr-accent);
+    color:  var(--clr-dark);
     margin-top: 0.5rem;
 }
 
 .skills-text{
-    color:  var(--clr-accent);
+    color:  var(--clr-dark);
     font-size: 1.15rem;
     font-weight: 500;
+    opacity:100%;
 }
     
     
