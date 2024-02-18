@@ -73,7 +73,7 @@ strong { font-weight: var(--fw-bold) }
     color: var(--clr-dark);
     text-decoration: none;
     cursor: pointer;
-    font-size: .8rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: var(--fw-bold);
@@ -265,8 +265,8 @@ header {
             "img title"
             "img subtitle";
         grid-template-columns: min-content max-content;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 250px;
+        padding-bottom: 250px;
     }
     
     .intro__img {
@@ -377,14 +377,15 @@ header {
 .skills-box{
     padding: 1rem;
     color: var(--clr-light);
-    max-width: 250px;
+    max-width: 240px;
+    min-width: 240px;
     margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     height: 300px;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: #fff;
     border-radius: 10%;
     opacity: 90%;
@@ -450,54 +451,143 @@ header {
 /* About me section */
 
 .about-me {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
+    display: block;
+    padding: 1em;
 }
 
 .about-me__img {
     box-shadow: var(--bs);
+    width: 100%; /* Make sure image is responsive and fits its container */
+    max-width: 300px; /* Max width for the image */
 }
 
 @media (min-width: 600px) {
     .about-me {
         display: grid;
-        grid-template-columns: 1fr 300px;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-            "title img"
-            "subtitle img"
-            "text img";
+            "title timeline"
+            "subtitle timeline"
+            "img timeline"
+            "text timeline";
         grid-column-gap: 2em;
     }
     
     .section__title--about {
         grid-area: title;
+        margin-bottom: 20px;
+        margin-top: 40px;
     }
     
     .section__subtitle--about {
         grid-column: 1 / -1;
-        grid-row: 2;
+        grid-row: 1;
         position: relative;
         left: -1em;
         width: calc(100% + 2em);
         padding-left: 1em;
         padding-right: calc(200px + 4em);
     }
-    
+
     .about-me__img {
         grid-area: img;
         position: relative;
         z-index: 2;
+        margin-top: 50px;
+    }
+
+    .timeline {
+        grid-area: timeline;
+        background: var(--primary-color);
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    .section__title--about,
+    .section__subtitle--about,
+    .about-me__img,
+    .about-me__text {
+        grid-column: span 1; /* Ensure each item takes up only one column */
+    }
+    
+}
+
+
+@media (min-width: 800px) {
+    .about-me {
+        grid-column-gap: 10em; /* Use original gap for large screens */
     }
 }
+
+@media (max-width: 600px) {
+    .about-me {
+        grid-column-gap: 10em; /* Use original gap for large screens */
+        grid-row-gap: 10em; /* Use original gap for large screens */
+    }
+    .about-me__img {
+        margin-top: 50px;
+    }
+    .timeline {
+        margin: 50px auto;
+        padding: 20px;
+    }
+}
+
+/* Outer Layer with the timeline border */
+.outer {
+border-left: 2px solid #333;
+}
+
+/* Card container */
+.card {
+position: relative;
+margin: 0 0 20px 20px;
+padding: 10px;
+background: #f3f3f3;
+color: var(--clr-grey);
+border-radius: 8px;
+max-width: 450px;
+}
+
+/* Information about the timeline */
+.info {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+/* Title of the card */
+.title {
+color: var(--clr-dark);
+position: relative;
+}
+
+/* Timeline dot  */
+.title::before {
+content: "";
+position: absolute;
+width: 10px;
+height: 10px;
+background: white;
+border-radius: 999px;
+left: -36px;
+border: 3px solid var(--clr-dark);
+}
+
 
 .about_me__social-list__link{
     font-weight: var(--fw-body);
 }
 
-/* My Work */
+  
 
+/* My Work */
 .my-work {
     background-color: var(--clr-dark);
+    background-image: url(../img/work.jpg);
+    background-size: cover;
     color: var(--clr-light);
     text-align: center;    
 }
@@ -525,12 +615,12 @@ header {
     max-width : 400px;
     min-height: 370px;
     max-height: 400px;
-    transition: transform 0.5s ease; /* Add a smooth transition for the hover effect */
+    transition: transform 0.3s ease; /* Add a smooth transition for the hover effect */
 }
 
 .portfolio__item:hover {
     transform: translateY(-5px); /* Move the item 5 pixels up on hover */
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 
@@ -571,8 +661,8 @@ header {
 
 .portfolio__img {
     transition: 
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear;
+        transform 300ms cubic-bezier(.5, 0, .5, 1),
+        opacity 300ms linear;
 }
 
 .portfolio__img:hover .portfolio__img {
