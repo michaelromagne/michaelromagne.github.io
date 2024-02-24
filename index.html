@@ -40,17 +40,15 @@
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">My projects</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">Who I am</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">My skills</a></li>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#work">Projects</a></li>
+                    <li><a href="talks.html">Talks</a></li>
                 </ul>
             </nav>
+            
         </header>
 
         <!-- Introduction -->
@@ -59,7 +57,7 @@
                 Hi, I am <strong>Michaël Romagné</strong>
             </h1>
             <div class="section__subtitle section__subtitle--intro">
-                <span href="" class="typewrite" data-period="2000" data-type='[ "I am a Machine Learning Engineer.", "Data Science, MLOps, Data Engineering", "Passionate about AI and Football."]'>
+                <span href="" class="typewrite" data-period="2000" data-type='[ "I am a Machine Learning Engineer.", "NLP, MLOps, Data Engineering.", "Passionate about AI and Football."]'>
                 </span>
             </div>
             <img src="img/michael.jpg" alt="Plouneour" class="intro__img">
@@ -84,8 +82,12 @@
                     </li>
                 </ul>
             </div>
+            <br><p class="intro__desc">
+                Specialized in ML and NLP, I lead end-to-end Machine Learning projects from PoC to production.
+                <br><br>I conduct data analyses and implement best MLOps practices for companies.
+            </p>
         </section>        
-
+        
         
         <!-- My skills -->
         <section class="my-skills" id="skills">
@@ -192,7 +194,15 @@
             <h2 class="section__title section__title--about">Who I am</h2>
 
             <div class="about-me__body">
-                <div id="about-me-content"></div>
+                <p>I'm a Machine Learning Engineer with a strong mathematical background. My path to Data Science began when I realized the vast potential of applying mathematical concepts to real-world challenges.
+            </p>
+                <p>I particularly improved my skills at Ubisoft, where I spent three years deploying Machine Learning models to detect in-game fraudulent transactions. This experience taught me how to manage end-to-end Machine Learning projects.
+            </p>
+                <p>Then, I joined GitGuardian as a Machine Learning Engineer, where we help companies secure their infrastructure thanks to secrets detection in source code, Infrastructure as Code vulnerabilities detection and Software Component Analysis.
+                I am working on fine-tuning Large Language Models to detect secrets and deploy them in our AWS infrastructure. I also did PoCs to automatically replace hardcoded secrets in code with environment variables (OpenAI API vs AST then code formatting like Black).
+            </p>
+                <p>In the meantime, I am developing personal projects. You can also find me playing Football every week, going to the Gym, reading books or hanging out with friends in Paris or elsewhere. If you want to have a talk about some projects, please contact me on <a href="https://www.linkedin.com/in/michael-romagne/">Linkedin</a> or at <a href="mailto:michael.romagne@gmail.com" class="about_me__social-list__link">michael.romagne@gmail.com</a>.
+                </p>
             </div>
             
             <img src="img/foot_picture.jpg" alt="Michou" width="300" class="about-me__img">

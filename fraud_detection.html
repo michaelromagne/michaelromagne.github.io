@@ -37,105 +37,129 @@
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
-                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
-                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About me</a></li>
+                    <li><a href="index.html#work">Projects</a></li>
+                    <li><a href="talks.html">Talks</a></li>
                 </ul>
             </nav>
+            
         </header>
         
 
-        <section class="intro">
+        <section class="intro_article">
             <h1 class="section__title section__title--intro">
                 Combat fraudsters <strong> at Ubisoft</strong>
             </h1>
             <p class="section__subtitle section__subtitle--intro">Limit fraud for online merchants.</p>
-            <img src="img/generated_stuff/hacker.png" alt="" class="intro__img">
+            <img src="img/generated_stuff/hacker.png" alt="" class="intro_article__img">
             <p class="portfolio__info">Duration: 5 min | Date: Sept 22, 2023</p>
         </section>
         
         <div class="portfolio-item-individual">
 
             <p>
-                For the last 3 years, I have immersed myself in the Gaming World at Ubisoft,
-                working on a Fraud Detection use case. <br>The primary objective of the project is 
-                to block e-commerce transactions deemed too risky in real time.
+                During 3 years, I have immersed myself in the Gaming World at Ubisoft. The company has developed some of the most iconic video games with the Assassin's Creed series, Rainbow Six Siege, Far Cry, Rayman, Just Dance and many others, making it the french biggest video game studio and one of the major ones in the world.
+                
+                <br>From the start, Ubisoft has placed Innovation and Data at the center of their business. They started to track gaming metrics very early on, making it a rich place for Data practicioners.
+                Recommendation systems, chat moderation, in-game cheater detection, in-game trained bots are examples of this diversity.
 
-                <br><strong>But what risks are we talking about ?</strong> Let's discover how online
-                merchants can lose big money and tarnish their reputation due to e-commerce frauds and how
-                we leveraged Machine Learning at Ubisoft to tackle these issues.
+                <br><br>At Ubisoft, my primary focus was <strong> E-commerce Fraud Detection</strong>. Ubisoft sells lots of games or in-game products (virtual currency, skins, DLCs) on their website, Ubiconnect gaming application and Gaming platforms like Steam.
+                Some of these products have a big success and are appealing for fraudsters, who seek buying them for "free" and reselling the products to real gamers with a big discount. This is a win-win transaction for them, but a big loss for the merchant.
+                In fact, most Payment Service Providers state that <strong>it is the responsibility of the e-commerce merchant to detect and block Fraud</strong>, and they may be charged if they do not do so. That's where Machine Learning comes into play.
 
             </p>
         
             <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud</h2>
-                
-            <p>First and foremost, we should define what is a Fraud.</p>
-            
+            <br>            
             <img src="img/fraud_article/cgb.PNG" width="700px" alt="Chargeback" style="margin-top: 5px; padding-top: 10px;">
-
-            <p>Let's assume a transaction made by a shopper in Ubisoft e-commerce ecosystem. 
-                Ubisoft receives funds, the goods are delivered, the player can have fun.
+            <br>
+            <p>First, it is worth diving in the definition of a Fraud. Let's assume a transaction made by a shopper in Ubisoft e-commerce ecosystem. 
+                Ubisoft receives funds, the goods are delivered to the customer/player and he can have fun.
                 For most transactions, that's it.
-                However in rare cases, several weeks or months later, a cardholder may be surprised
-                with a Ubisoft charge on his bank account and dispute it to his bank.
+                However in rare cases, several weeks or months later, a random cardholder may be surprised
+                by a Ubisoft charge on his bank account that he never intentionaly did and dispute it to his bank.
                 
                 In that case, the bank will initiate a <strong>chargeback</strong>,
                 that will be sent to Ubisoft through the card network. If Ubisoft can not show 
                 that the chargeback is an abuse from the cardholder, they have to return the funds 
-                to the cardholder, with additional chargeback fees charged by the Payment Service Provider 
-                (15euros in case of Paypal, 20 euros in case of Worldpay). On top of that, many products 
-                can not be withdrawn from the fraudster (shopper) player account, like Virtual Currency products 
-                that are not revocable. Virtual currency packs represent 80 to 90 % of the transactions we handle 
-                in this project and have a big success with players, thus are highly targeted by malicious customers.
-                The malicious actors can then sell your products at a very low price and gain a good margin.
+                to the cardholder, with <strong>additional chargeback fees</strong> charged by the <strong>Payment Service Provider</strong> 
+                (15euros in case of Paypal, 20 euros in case of Worldpay). On top of that, if an e-merchant is victim of too many frauds,
+                the banks will accept less payments for this company, as illustrated by Microsoft in the figure below.
+                
+                <center><img src="img/fraud_article/acceptance_rate.PNG" width="800px" alt="acceptance" style="margin-top: 5px; padding-top: 10px;"></center>
+
+                <br>
+                When Ubisoft is aware of a fraud, they may not even be able to withdraw the product from the fraudster (shopper) account.
+                Virtual currency packs for instance are not revocable and represent 80 to 90 % of the in-game transactions, thus are highly targeted by fraud.
+                The malicious actors can then sell these products at a very low price and make a good margin.
                 
             </p>
 
 
             <p>You can now imagine how this money can be used in the end, to isolated fraudsters trying to
                 earn easy money to organized groups willing to finance criminal organisations.
-                It can come from a lot of different means : (see mendeleiev fraud + prez mlgroup 4 blocks)</p>
-            
-            <p>Bank chargebacks pose a significant threat (exponential growth for business),
-            try to be the best compared to other actors in e-commerce, not totally fraud-proof.
-            accompanied by the specter of escalating fees and exponential growth. 
-            Understanding and mitigating this risk has been a pivotal aspect of our fraud detection initiative.
-
-            Grey market : Money laundering, soft money.
-
-            With this perspective, we now can rephrase our problematic for this project :
-            <strong>How can we keep the chargeback rate under control ?</strong>
-            
-            Detail challenges that lead to ML solutions below : SLA with low latency, labels
-            not available if we block the transaction, label latency due to chargeback workflow,
-            high class imbalance... Big sandbox for ML practicioners, at least junior ones.
-            Ideal subject to learn and grow as it's down to earth and critical for business.
+                This is an ethical issue that businesses are willing to tackle. But the most important problem for these companies
+                is the <strong>exponential growth of the number of frauds</strong> when a breach is open.
+                That is what fraudsters are looking for : easy money with easy breaches. And as in every security domain, the
+                best defense for companies is too <strong>create as much friction as possible</strong> on the fraudster path,
+                to deter the malicious actor from attacking their business and make them search for other more vulnerable merchants.
+                
             </p>
 
-            <p></p>    
+            <h2 style="margin-top: 50px; font-size:40px;">How Machine Learning can help</h2>
+
+            <p>The friction concept is interesting for Machine Learning Engineers. It means that we do not have to develop a perfect model 
+            catching every single fraud. Be sure that if an attacker is motivated enough, he will manage to beat your model or infrastructure.
+            <br>For business stakeholders, this is sometimes hard to admit, as fraud raises strong emotions. Nobody wants to be victim of fraud.
+            However, it is key to look at the cost of frauds and put the fear emotions in perspective.
+            Indeed, it may turn out that in some segments of your e-commerce business, fraud chargebacks are not that expensive. That is the case for Ubisoft on Steam in-game transactions for instance,
+            in which Steam is liable for frauds and do not forward chargebacks to game developers. In this case, you should be much more laxist : <strong>if you try to block more frauds, you will necesarily block more legit customers.</strong>
+
+            <center><img src="img/fraud_article/tp.png" width="400px" alt="tp" style="margin-top: 5px; padding-top: 10px;"></center>
+
+            In these situations, you want to perform a <strong>cost analysis</strong> to evaluate your model and have an estimate of the Return On Investment of the project.
+            You associate gains and loss to each decision of your model : how much money do you save when you block a fraudster ? How much do you lose when you block a legit customer ?
+
+            <br>In this project, <strong>the baseline is the performances of the product previously used to detect fraud</strong>.
+            We know that this tool manages to limit the chargeback rate at a low level but at the cost of a very high False Positive Rate.
+            This is due to complex handwritten hard rules, accumulated after years of fraud management by payment and fraud experts.
+            The rules are not versioned and the knowledge is almost only held by a single person, making it a perfect use case for ML success.
+
+            <br>There are still some challenges to overcome: 
+
+            <ul>
+                <li>We analyze all e-commerce transactions in real-time, with strict SLA : 200ms to respond process the payload, compute features and make the prediction.</li>
+                <li>As described in the chargeback flow, the fraud labels come with a big delay, from several weeks to a few months. So our dataset labels are corrupted.</li>
+                <li>If we block a transaction in real time, we will never get any label, ever.</li>
+                <li>We have very few frauds, leading to highly skewed datasets.</li>
+            </ul>
+
+            So in the end, the Machine Learning problem we are trying to solve has slightly evolved.
+            We want to <strong>replace a rule-engine by a machine learning model</strong>, by taking advantage of a lot of transactional data, with the objective of <strong>controlling the chargeback rate and accept as many legit customers as possible.</strong>
+
         
-            <h2 style="margin-top: 50px; font-size:40px;">How Do We Tackle It?</h2>
-            <p>
-                First, historically the first system used at Ubisoft was a big rule based system.
-                On the one hand, rule based systems decisions are easy to explain if a customer complains and
-                are rule sets are pretty simple so the fraud check is very quick.
+            <h3 style="margin-top: 50px; font-size:40px;">How Do We Tackle It?</h3>
 
-                Our approach involves a robust set of components:
-            </p>
+            <br>
+            <center><img src="img/fraud_article/all_mle_env.png" width="1000px" alt="mle_stack" style="margin-top: 5px; padding-top: 10px;"></center>
+            
+            <p>Our approach involves a robust set of components:</p>
             <ul>
                 <li>Platform hosted on AWS</li>
                 <li>Feature store with Spark flows</li>
                 <li>Implementation of an ML model (XGBoost)</li>
                 <li>Big Monitoring (Tableau, Grafana)</li>
             </ul>
-            
-            <h2 style="margin-top: 50px; font-size:40px;">What Machine Learning brang to Fraud Detection performances ?</h2>
+
+            <h3 style="margin-top: 50px;">Data : a Feature Store</h3>
+            <p>
+                A Feature Store to align training (offline) feature values with inference (online) ones.
+                A lot of features online are pre-computed in daily batches to lower inference latency.
+            </p>
+
             <h3 style="margin-top: 50px;">Key Metrics and Impact</h3>
             <p>
                 As said in the first part, we aimed at replacing a third party tool, 
@@ -146,9 +170,14 @@
                 Lastly, we replaced the third party tool on 80% of transactions, so a total of 200k euros per day on average.
             </p>
         
-            <h3 style="margin-top: 50px;">Control Group and AB Test</h3>
+            <h3 style="margin-top: 50px;">Control Group to the rescue</h3>
             <p>
+                Remember that when a transaction is blocked, we do not get its label.
+                Indeed, the label of a transaction is always "legit transaction" by default until a fraud is discovered after a cardholder complain, flagging the transaction as fraudulent.
+                <br>Thus, we need a method to get an unbiased sample of data with labels to compute performances of our classifier. 
                 To estimate gains accurately, we implemented a controlled experiment using a Control Group and AB testing methodology. This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
+                
+                <br>The concept of Control Group is presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData conference</a>. 
             </p>
         
             <h3 style="margin-top: 50px;">Model Implementation and Explainability</h3>
@@ -158,6 +187,8 @@
                 but also provides insights into its decision-making process.
                 On top of that, we added unit tests on ML model performances
                 (find an article on why ML models should be tested like classical software)
+
+                <center><img src="img/fraud_article/explainer_dashboard.jpg" width="800px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
             </p>
         
             <h3 style="margin-top: 50px;">AWS Platform and Tableau Dashboards</h3>

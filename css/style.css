@@ -6,6 +6,34 @@
 
 /* Custom Properties, update these for your own design */
 
+/* Basic reset */
+
+.navbar {
+    text-align: right;
+    padding: 10px 50px; /* Adjust the padding as needed */
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px; /* Space between the links */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000; /* Adjust the color as needed */
+    padding: 5px 10px; /* Adjust the padding as needed */
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #555; /* Adjust the hover color as needed */
+}
+
+
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
@@ -317,6 +345,15 @@ header {
     text-decoration: underline;
 }
 
+.intro__desc {
+    width: 100%;
+    display: block;
+    text-align: center;
+    grid-column: 1 / -1;
+    padding-top: 50px;
+    font-family: 'Merryweather', serif;
+}
+
 
 /* Skills Section */
 .my-skills {
@@ -461,6 +498,10 @@ header {
     box-shadow: var(--bs);
     width: 100%; /* Make sure image is responsive and fits its container */
     max-width: 350px; /* Max width for the image */
+}
+
+.about-me__body p {
+    text-align: justify;
 }
 
 @media (min-width: 600px) {
@@ -872,4 +913,84 @@ image {
 
 .text-image {
     padding-right: 20px;
+}
+
+
+
+/*  Intro article section  */
+
+.intro_article {
+    position: relative;
+}
+
+.intro_article__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+.typewrite { 
+    border-right: 0.08em solid var(--clr-dark)
+}
+
+@media (min-width: 600px) {
+    .intro_article {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+    
+    .intro_article__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }    
+    
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+
+/* Favourite talks */
+.talks-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.talk-list {
+    list-style: none;
+    padding: 0;
+}
+.talk {
+    background: #eee;
+    margin: 15px 0;
+    padding: 15px;
+    border-left: 4px solid #5b9bd5;
+}
+.talk-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.talk-speaker {
+    font-style: italic;
+}
+.talk-description {
+    margin-top: 5px;
 }
