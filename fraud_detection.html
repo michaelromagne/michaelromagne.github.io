@@ -143,77 +143,124 @@
         
             <h3 style="margin-top: 50px; font-size:40px;">How Do We Tackle It?</h3>
 
-            <br>
-            <center><img src="img/fraud_article/all_mle_env.png" width="1000px" alt="mle_stack" style="margin-top: 5px; padding-top: 10px;"></center>
-            
-            <p>Our approach involves a robust set of components:</p>
-            <ul>
-                <li>Platform hosted on AWS</li>
-                <li>Feature store with Spark flows</li>
-                <li>Implementation of an ML model (XGBoost)</li>
-                <li>Big Monitoring (Tableau, Grafana)</li>
-            </ul>
-
-            <h3 style="margin-top: 50px;">Data : a Feature Store</h3>
-            <p>
-                A Feature Store to align training (offline) feature values with inference (online) ones.
-                A lot of features online are pre-computed in daily batches to lower inference latency.
-            </p>
-
-            <h3 style="margin-top: 50px;">Key Metrics and Impact</h3>
-            <p>
-                As said in the first part, we aimed at replacing a third party tool, 
-                that is a rule based fraud detection system.
-                The success of our project is reflected in key metrics such as a notable gain in net sales, 
-                the efficiency of our tech stack, and the valuable time saved by fraud experts.
-                Also, we noticed several capital human errors made on the rule based system.
-                Lastly, we replaced the third party tool on 80% of transactions, so a total of 200k euros per day on average.
-            </p>
-        
-            <h3 style="margin-top: 50px;">Control Group to the rescue</h3>
-            <p>
-                Remember that when a transaction is blocked, we do not get its label.
-                Indeed, the label of a transaction is always "legit transaction" by default until a fraud is discovered after a cardholder complain, flagging the transaction as fraudulent.
-                <br>Thus, we need a method to get an unbiased sample of data with labels to compute performances of our classifier. 
-                To estimate gains accurately, we implemented a controlled experiment using a Control Group and AB testing methodology. This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
+            <h3 style="margin-top: 50px;">A Feature Store</h3>
+                <p>
+                Ubisoft has a lot of gaming and transactional data that Machine Learning Engineers can exploit.
+                For Fraud Detection, <strong>Feature Engineering is key</strong>. Thus, we spent a lot of time with Ubisoft
+                Fraud experts to determine the characteristics of each fraud attacks Ubisoft has undergone in its history.
+                Here are some risk factors we spotted and translated in features: 
                 
-                <br>The concept of Control Group is presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData conference</a>. 
-            </p>
-        
-            <h3 style="margin-top: 50px;">Model Implementation and Explainability</h3>
-            <p>
-                Our approach combines the power of XGBoost with explainability tools like <strong>explainerdashboards.</strong> 
-                This ensures that the model not only detects fraud effectively 
-                but also provides insights into its decision-making process.
-                On top of that, we added unit tests on ML model performances
-                (find an article on why ML models should be tested like classical software)
+                <ul>
+                    <li>The customer already frauded in the past.</li>
+                    <li>A high "velocity" (high number of transactions) in a short amount of time.</li>
+                    <li>A high amount with an account created very recently.</li>
+                    <li>A player who used to play in the USA but the transaction is done in India.</li>
+                    <li>The customer deactivated his 2fa just before an expensive transaction with an unusual transaction country.</li>
+                </ul>
 
-                <center><img src="img/fraud_article/explainer_dashboard.jpg" width="800px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
-            </p>
-        
-            <h3 style="margin-top: 50px;">AWS Platform and Tableau Dashboards</h3>
-            <p>
-                Leveraging the capabilities of the AWS platform, our fraud detection system is
-                hosted on a scalable and secure infrastructure. Tableau dashboards provide intuitive 
-                visualizations for monitoring and analysis.
-            </p>
-        
-            <h3 style="margin-top: 50px;">MLE experiment environment details</h3>
+                These features have to be computed in real-time, and require several table joins that take time. Thus, in order to
+                match the strict SLA, we needed to have an efficient way of getting these values. That's what a <strong>Feature Store</strong>
+                can bring. By computing parts of the features in daily batches, we can retrieve feature values much more rapidly.
+                For instance, you can add the timestamps of the new transactions that the customers made each day in an individual time series and maintain these arrays
+                of all transactions done by customers in tables. During inference, you just have to apply the feature function on those.
+                        
+                </p>
+                <p>
+                    Futhermore, The Feature Store is a <strong>more reliable</strong> way of computing features for this kind of application:
+                    the definitions are centralized, they are tested and the values are monitored. It ensures an alignment between offline (training)
+                    and online (real-time inference) feature values.
+                    Below is a simple schema describing the Feature Store. If you want more detail, you can have a look at this <a href="https://www.youtube.com/watch?v=EmZIYcHGX9U">great talk</a>
+                    by Jeanine Harb, former Data Engineer in the team.
+                        
 
-            <h3 style="margin-top: 50px;">Exploration of One-Class Supervised Learning</h3>
-            <p>
-                As part of our continuous improvement, we delved into research on one-class supervised 
-                learning and semi-supervised techniques, exploring innovative approaches to enhance our 
-                fraud detection capabilities. In the end too complex and no big added value on tabular data.
-                But that was nice to work on something different.
-            </p>
+                    <center><img src="img/fraud_article/fsv2.png" width="1000px" alt="fsv2" style="margin-top: 5px; padding-top: 10px;"></center>
+                    </p>
 
-            <h3 style="margin-top: 50px;">In the end, come back to a rule engine ?</h3>
-            <p>
+
+            <h3 style="margin-top: 50px;">XGBoost for the win</h3>
+
+                Pretty classical use case and nothing revolutionary here, xgboost still the best 
+                
+                <br>We explored semi-supervised learning (corrupted data)
+
+                <br>Unsupervised Learning to spot outliers
+
+                <br>Feature Engineering and exchange with fraud experts always was the best lever to get closer to a product that satisfy business stakeholder.
+                It may not be very shiny, but it is pragmatic.
+
+
+                <p>
+                    Our approach combines the power of XGBoost with explainability tools like <strong>explainerdashboards.</strong> 
+                    This ensures that the model not only detects fraud effectively 
+                    but also provides insights into its decision-making process.
+                    On top of that, we added unit tests on ML model performances
+                    (find an article on why ML models should be tested like classical software)
+
+                    <center><img src="img/fraud_article/explainer_dashboard.jpg" width="800px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
+                </p>
+
+                Explainability is key for this project, so after moving from a very complex rule engine (previous product)
+                to a Machine Learning model with great feature engineering, we even explored the possibility of coming back
+                to a rule engine, with pattern mining. The FP-growth algorithm used is TODO 
+                
                 Fp-growth, power in the end of fraud experts instead of ml teams who deploy ml models,
-                smart rule engine periodically retrained and rules proposed.
-                https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/ 
-            </p>
+                    smart rule engine periodically retrained and rules proposed.
+                    https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/ 
+                
+                
+                Jeremy Jordan video on adding ML on top of a rule engine. Rules should be the basis.
+
+
+            
+            <h3 style="margin-top: 50px;">Model evaluation and Business KPIs</h3>
+
+                <p>
+                    As said in the first part, we aimed at replacing a third party tool, 
+                    that is a rule based fraud detection system.
+                    The success of our project is reflected in key metrics such as a notable gain in net sales, 
+                    the efficiency of our tech stack, and the valuable time saved by fraud experts.
+                    Also, we noticed several capital human errors made on the rule based system.
+                    Lastly, we replaced the third party tool on 80% of transactions, so a total of 200k euros per day on average.
+                </p>
+                
+                <p>
+                    Remember that when a transaction is blocked, we do not get its label.
+                    Indeed, the label of a transaction is always "legit transaction" by default until a fraud is discovered after a cardholder complain, flagging the transaction as fraudulent.
+                    <br>Thus, we need a method to get an unbiased sample of data with labels to compute performances of our classifier. 
+                    To estimate gains accurately, we implemented a controlled experiment using a Control Group and AB testing methodology. This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
+                    
+                    <br>The concept of Control Group is presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData conference</a>. 
+                </p>
+
+
+            <h3 style="margin-top: 50px;">A Live product to support</h3>
+
+                Lot of support
+
+                Adversarial context, regular updates from trends in frauds 
+
+                Dashboarding for business stakeholders and monitoring 
+
+
+                MLOps practices transition
+
+            
+
+            <h3 style="margin-top: 50px;">A solid Tech Stack</h3>
+            
+                <center><img src="img/fraud_article/all_mle_env.png" width="1000px" alt="mle_stack" style="margin-top: 5px; padding-top: 10px;"></center>
+                
+                <p>Summary of the project components:</p>
+                <ul>
+                    <li>Platform hosted on AWS</li>
+                    <li>Feature store with Spark flows</li>
+                    <li>Implementation of an ML model (XGBoost), on-premise servers, Kubernetes cluster.</li>
+                    <li>Big Monitoring (Tableau, Grafana)</li>
+                </ul>
+
+            
+
+            
 
         </div>
         
