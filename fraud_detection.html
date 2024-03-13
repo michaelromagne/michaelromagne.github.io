@@ -53,7 +53,7 @@
             <h1 class="section__title section__title--intro">
                 Combat fraudsters <strong> at Ubisoft</strong>
             </h1>
-            <p class="section__subtitle section__subtitle--intro">Limit fraud for online merchants.</p>
+            <p class="section__subtitle section__subtitle--intro">A recipe for online merchants.</p>
             <img src="img/generated_stuff/hacker.png" alt="" class="intro_article__img">
             <p class="portfolio__info">Duration: 10 min | Date: Mar 13, 2024</p>
         </section>
@@ -63,8 +63,8 @@
             <p>
                 During 3 years, I have immersed myself in the Gaming World at Ubisoft. The company has developed some of the most iconic video games with the Assassin's Creed series, Rainbow Six Siege, Far Cry, Rayman, Just Dance and many others, making it the french biggest video game studio and one of the major ones in the world.
                 
-                <br>From the start, Ubisoft has placed Innovation and Data at the center of their business. They started to track gaming metrics very early on, making it a rich place for Data practicioners.
-                Recommendation systems, chat moderation, in-game cheater detection, in-game trained bots are examples of this diversity.
+                <br>From the start, Ubisoft has placed Innovation and Data at the center of its business. They started to track gaming metrics very early on, making it a rich place for Data practicioners :
+                recommendation systems, chat moderation, in-game cheater detection, in-game trained bots are examples of this diversity.
 
                 <br><br>At Ubisoft, my primary focus was <strong> E-commerce Fraud Detection</strong>. Ubisoft sells lots of games or in-game products (virtual currency, skins, DLCs) on their website, Ubiconnect gaming application and Gaming platforms like Steam.
                 Some of these products have a big success and are appealing for fraudsters, who seek buying them for "free" and reselling the products to real gamers with a big discount. This is a win-win transaction for them, but a big loss for the merchant.
@@ -74,9 +74,9 @@
         
             <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud</h2>
             <br>            
-            <img src="img/fraud_article/cgb.PNG" width="700px" alt="Chargeback" style="margin-top: 5px; padding-top: 10px;">
+            <img src="img/fraud_article/cgb.PNG" width="1000px" alt="Chargeback" style="margin-top: 5px; padding-top: 10px;">
             <br>
-            <p>First, it is worth diving in the definition of a Fraud. Let's assume a transaction made by a shopper in Ubisoft e-commerce ecosystem. 
+            <p>First of all, it is worth diving in our definition of a Fraud. Let's assume a transaction made by a shopper in Ubisoft e-commerce ecosystem. 
                 Ubisoft receives funds, the goods are delivered to the customer/player and he can have fun.
                 For most transactions, that's it.
                 However in rare cases, several weeks or months later, a random cardholder may be surprised
@@ -184,18 +184,17 @@
 
             <h3 style="margin-top: 50px;">XGBoost for the win</h3>
                 
-                <br>In Fraud Detection, we have highly imbalanced datasets and delays in the identification of fraudulent transactions making our dataset corrupted. It seems to be a good use-case for experimentation. 
-                
-                <br>We explored <strong>semi-supervised learning and weakly supervised learning</strong>, with <a href="https://arxiv.org/abs/1911.08623">Deviation Networks</a> for Anomaly Detection for instance.
+                <br>In Fraud Detection, we have highly imbalanced datasets and delays in the identification of fraudulent transactions making our dataset corrupted.                 
+                For these reasons, we explored <strong>semi-supervised learning and weakly supervised learning</strong>, with <a href="https://arxiv.org/abs/1911.08623">Deviation Networks</a> for Anomaly Detection for instance.
                 We assumed that all our legit transactions, for which we did not receive any fraud flag yet, were actually unlabeled data. Indeed, they have a chance to be a fraud someday if someone complains to his bank.
-                The only sure labels are frauds because we had a chargeback from banks. Deviation networks push anomalies far from the normal data, attracting similar data points. When we use this algorithm, we assume that frauds are anomalies, that some features differ from legit transactions.
-                This approach was interesting but unfortunately frauds generally do not vary so much from normal data due to the adversarial behavior of fraudsters who try to mimick normal transactions.
-                Nevertheless, it was valuable to explore this algorithm in order to analyze past data and dig in legit transactions looking similar to frauds, allowing us to clean our dataset labels.
+                The only sure labels are frauds because we had a chargeback from banks. Deviation networks push anomalies far from the normal data, attracting similar data points. When we use this algorithm, we assume that frauds are anomalies, meaning that some features differ from legit transactions.
+                Unfortunately apart from easy fraud patterns, most frauds do not vary a lot from normal data due to the adversarial behavior of fraudsters who try to mimick normal transactions.
+                Nevertheless, this exploration was valuable in order to analyze past data and dig in "legit" transactions looking similar to known frauds, allowing us to clean our dataset labels.
 
-                <br>Despite many tests done to improve performances, on tabular data <strong>the secret sauce remains having strong features correlated with fraud and train Gradient Boosted Trees</strong>.
-                We added a undersampling step to rebalance our dataset before training The XGBoost model, and we did not take the last weeks of transactions to train our model as the data was too corrupted.
+                <p>Despite many tests to improve performances, on tabular data <strong>the secret sauce remains having strong features correlated with fraud and train Gradient Boosted Trees</strong>.
+                We added a undersampling step to rebalance our dataset before optimising a XGBoost model, and we did not take the last few weeks of transactions in our training set as the data was too corrupted.
                 <strong>Feature Engineering</strong> and <strong>our collaboration with fraud experts</strong> has always been the most effective strategy to refine our model, ensuring its alignment with business objectives by catching fraud efficiently and accepting most of legit users.
-
+                </p>
                 
                 <p>
                     Moreover, we used explainability tools such as <strong><a href="https://github.com/oegedijk/explainerdashboard">explainerdashboards</a></strong>.
@@ -212,13 +211,13 @@
                 With a clean and tested rule registry and regularly updated rulesets, this approach is great.
                 It is used by Uber in their product <strong><a href="https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/">Uber RADAR</a></strong>.
                 
-                <br>To be complete on this Rule Engine vs Machine Learning subject, I would also like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's wonderful talk</a></strong> on the subject, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
+                <br>To be complete on this Rule Engine vs Machine Learning subject, I would also like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's wonderful talk</a></strong>, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
 
             
             <h3 style="margin-top: 50px;">Model evaluation and Business KPIs</h3>
 
             <p>
-                As explained in the last section, when a transaction is blocked, we do not get any label as the payment ends.
+                When a transaction is blocked, we do not get any label as the payment ends.
                 It means that we only have the labels for transactions that our model accepted, which will be fraud or legit.
                 In statistical terms, these are <strong>True Negatives</strong> (Legit transactions that were accepted by the model) and <strong>False Negatives</strong> (Frauds that were accepted by the model).
                 To compute Classification metrics, we also need some positive instances, things that were blocked by the model.
@@ -231,10 +230,8 @@
             </p>
 
             <p>
-                As said in the first part, we aimed at replacing a third party tool, 
-                that is a rule based fraud detection system.
                 In the end, the success of our project is reflected in key metrics such as a <strong>5% gain in net sales</strong> 
-                and the valuable time saved by fraud experts. Thanks to this project, we also noticed human errors made on the rule based system leading to an increase in false positives, and we decentralized knowledge so that the tool can be owned by more people.
+                and the valuable time saved for fraud experts. Thanks to this project, we also noticed human errors made on the rule based system leading to an increase in false positives, and we decentralized knowledge so that the tool can be owned by more people.
                 Lastly, we <strong>replaced the third party tool on 80% of all PC transactions</strong>, a total of <strong>80M euros per year</strong>.
             </p>
                 
@@ -249,12 +246,12 @@
                 Alerts need to be set properly and thresholds fine tuned so that we can react as soon as possible when there is an incident (fraud attack, platform down...)
             </p>
             <p>
-                Then, it means having the good set of tool to <strong>Retrain Machine Learning models</strong> when there is an emerging fraud pattern. For this, we need : 
+                Then, it means having the good set of tool to <strong>retrain and deploy Machine Learning models</strong> when there is an emerging fraud pattern. For this, we need : 
                 
                 <ul>
-                    <li>A tool to launch remote jobs on powerful Machines. Here, we used Okteto which is adapted to our Kubernetes cluster, DVC to run reproducible pipelines that can be shared.</li>
+                    <li>A tool to launch remote jobs on powerful Machines. Here we used Okteto which is adapted to our Kubernetes cluster, and DVC to run reproducible pipelines that can be shared.</li>
                     <li>An Experiment tracking tool : ClearML is great for this and much more.</li>
-                    <li>A robust CI to deploy our model : Model performance unit tests to avoid regressions and Gitlab CI to push our model in a S3 bucket, record metadata in a DynamoDB and update the Sagemaker endpoint.</li>
+                    <li>A robust CI to deploy our model : Model performance unit tests to avoid regressions and Gitlab CI to push our model in a S3 bucket, record metadata in DynamoDB and update the Sagemaker endpoint.</li>
                 </ul>
 
             </p>
@@ -267,12 +264,12 @@
             <h3 style="margin-top: 50px; font-size:40px;">Last words</h3>
             
             <p>
-                This is just another story of Machine Learning models in production and as in others, ML models is only the tip 
-                of the iceberg. This use case also reminds us that Decision Trees still rock in business use cases and it is a must
+                This is just another story of Machine Learning models in production showing that <strong>Modeling is only the tip 
+                of the iceberg</strong> in production use cases. It also reminds us that Decision Trees still rock in business and it is a must have skill
                 to master classical ML algorithms.
-                <br>On top of modeling, there is so much to discover in MLOps, DevOps, Data Engineering, 
-                Software Engineering, making the Machine Learning Engineer role a wonderful place for curious and creative people.
-                I thank Ubisoft again for the opportunity of working on this project with such a great team !
+                <br>On top of modeling, there is so much to discover in <strong>MLOps, DevOps, Data Engineering, 
+                Software Engineering, making the Machine Learning Engineer role a wonderful place for curious and creative people</strong>.
+                <br>I thank Ubisoft again for the opportunity of working on this project with such a great team !
             </p>
 
             
