@@ -184,88 +184,96 @@
 
             <h3 style="margin-top: 50px;">XGBoost for the win</h3>
                 
-                <br>We have highly unbalanced data and latency in fraud flags making our dataset corrupted. It seems to be a good use-case for experimentation. 
+                <br>In Fraud Detection, we have highly imbalanced datasets and delays in the identification of fraudulent transactions making our dataset corrupted. It seems to be a good use-case for experimentation. 
                 
                 <br>We explored <strong>semi-supervised learning and weakly supervised learning</strong>, with <a href="https://arxiv.org/abs/1911.08623">Deviation Networks</a> for Anomaly Detection for instance.
-                We assumed that all non-fraud transactions had no labels, as this is a label by default and all have a chance to be a fraud someday if someone complains to his bank.
+                We assumed that all our legit transactions, for which we did not receive any fraud flag yet, were actually unlabeled data. Indeed, they have a chance to be a fraud someday if someone complains to his bank.
                 The only sure labels are frauds because we had a chargeback from banks. Deviation networks push anomalies far from the normal data, attracting similar data points. When we use this algorithm, we assume that frauds are anomalies, that some features differ from legit transactions.
                 This approach was interesting but unfortunately frauds generally do not vary so much from normal data due to the adversarial behavior of fraudsters who try to mimick normal transactions.
-                Nevertheless, it had the interest to analyze past data and dig in legit transactions looking similar to frauds. It can help clean our labels.
+                Nevertheless, it was valuable to explore this algorithm in order to analyze past data and dig in legit transactions looking similar to frauds, allowing us to clean our dataset labels.
 
                 <br>Despite many tests done to improve performances, on tabular data <strong>the secret sauce remains having strong features correlated with fraud and train Gradient Boosted Trees</strong>.
-                We added a undersampling step to rebalance our dataset before training The XGBoost model. Another characteristic of this model is the very low latency for inference, which is required.
-
-                <br><strong>Feature Engineering</strong> and <strong>exchange with fraud experts</strong> always was the best lever to get closer to a product that satisfy business stakeholder by catching fraud efficiently and accepting most of legit users.
-                It may not be very shiny, but it is pragmatic.
+                We added a undersampling step to rebalance our dataset before training The XGBoost model, and we did not take the last weeks of transactions to train our model as the data was too corrupted.
+                <strong>Feature Engineering</strong> and <strong>our collaboration with fraud experts</strong> has always been the most effective strategy to refine our model, ensuring its alignment with business objectives by catching fraud efficiently and accepting most of legit users.
 
                 
                 <p>
-                    Lastly, we use explainability tools like <strong><a href="https://github.com/oegedijk/explainerdashboard">explainerdashboards</a></strong>.
-                    This is very convenient to debug our model, fully understand it and explain the model's decisions to customers which is mandatory if a customer contacts the customer service.
-                    On top of that, we added <strong>unit tests on ML model performances on slices of our dataset</strong> to ensure that there is no regression when we deploy a new model.
+                    Moreover, we used explainability tools such as <strong><a href="https://github.com/oegedijk/explainerdashboard">explainerdashboards</a></strong>.
+                    This is very convenient to debug our model, fully understand it and explain the model's decisions when there is a customer inquiry.
+                    On top of that, we added <strong>unit tests on key segments of our dataset</strong> to protect us against performance regression when we deploy a new model.
 
-                    <center><img src="img/fraud_article/explainer_dashboard.jpg" width="800px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
+                    <center><img src="img/fraud_article/explainer_dashboard.jpg" width="1000px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
                 </p>
 
                 Explainability is key for this project, so after moving from a very complex rule engine (previous product)
-                to a Machine Learning model with great feature engineering, we finally started a <strong>come back
-                to a rule engine</strong>, with the pattern mining algorithm <strong>FP-growth</strong>. We get the associations of categorical features that 
-                happen the most with fraud. We can then send these rules to the fraud experts who can validate them before going in production.
+                to a Machine Learning model with great Feature Engineering, we finally started to <strong>come back
+                to a rule engine</strong>, leveraging the pattern mining algorithm <strong>FP-growth</strong>. We get the associations of categorical features that 
+                happen the most with fraud. We then send these rules to the fraud experts who can validate them before going in production.
                 With a clean and tested rule registry and regularly updated rulesets, this approach is great.
-                This approach is used by Uber in their product <strong><a href="https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/">Uber RADAR</a></strong>.
+                It is used by Uber in their product <strong><a href="https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/">Uber RADAR</a></strong>.
                 
-                To be complete on this Rule Engine vs Machine Learning subject, I would like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's wonderful talk</a></strong> on the subject, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
+                <br>To be complete on this Rule Engine vs Machine Learning subject, I would also like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's wonderful talk</a></strong> on the subject, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
 
             
             <h3 style="margin-top: 50px;">Model evaluation and Business KPIs</h3>
 
-                <p>
-                    As said in the first part, we aimed at replacing a third party tool, 
-                    that is a rule based fraud detection system.
-                    The success of our project is reflected in key metrics such as a notable gain in net sales, 
-                    the efficiency of our tech stack, and the valuable time saved by fraud experts.
-                    Also, we noticed several capital human errors made on the rule based system.
-                    Lastly, we replaced the third party tool on 80% of transactions, so a total of 200k euros per day on average.
-                </p>
+            <p>
+                As explained in the last section, when a transaction is blocked, we do not get any label as the payment ends.
+                It means that we only have the labels for transactions that our model accepted, which will be fraud or legit.
+                In statistical terms, these are <strong>True Negatives</strong> (Legit transactions that were accepted by the model) and <strong>False Negatives</strong> (Frauds that were accepted by the model).
+                To compute Classification metrics, we also need some positive instances, things that were blocked by the model.
                 
-                <p>
-                    Remember that when a transaction is blocked, we do not get its label.
-                    Indeed, the label of a transaction is always "legit transaction" by default until a fraud is discovered after a cardholder complain, flagging the transaction as fraudulent.
-                    <br>Thus, we need a method to get an unbiased sample of data with labels to compute performances of our classifier. 
-                    To estimate gains accurately, we implemented a controlled experiment using a Control Group and AB testing methodology. This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
-                    
-                    <br>The concept of Control Group is presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData conference</a>. 
-                </p>
+                <br>Thus, we implemented a <strong>Control Group</strong> : For a subsample of all the transactions in a day, we will bypass the model decision and just log the Model score so that the payments of this subset are completed
+                and we can still analyze our model's decisions.
+                This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
+                
+                <br>The concept of Control Group is extensively presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData talk</a>. 
+            </p>
+
+            <p>
+                As said in the first part, we aimed at replacing a third party tool, 
+                that is a rule based fraud detection system.
+                In the end, the success of our project is reflected in key metrics such as a <strong>5% gain in net sales</strong> 
+                and the valuable time saved by fraud experts. Thanks to this project, we also noticed human errors made on the rule based system leading to an increase in false positives, and we decentralized knowledge so that the tool can be owned by more people.
+                Lastly, we <strong>replaced the third party tool on 80% of all PC transactions</strong>, a total of <strong>80M euros per year</strong>.
+            </p>
+                
+                
 
 
             <h3 style="margin-top: 50px;">A Live product to support</h3>
 
-                Lot of support
+            <p>
+                Now that the platform is ready and the model is deployed, the Fraud Detection product is live and the team has to maintain it.
+                First, It means <strong>Monitoring it</strong> using <strong>Grafana</strong> for real-time monitoring and <strong>Tableau</strong> for dashboarding as most people in the team and business stakeholders were familiar with it.
+                Alerts need to be set properly and thresholds fine tuned so that we can react as soon as possible when there is an incident (fraud attack, platform down...)
+            </p>
+            <p>
+                Then, it means having the good set of tool to <strong>Retrain Machine Learning models</strong> when there is an emerging fraud pattern. For this, we need : 
+                
+                <ul>
+                    <li>A tool to launch remote jobs on powerful Machines. Here, we used Okteto which is adapted to our Kubernetes cluster, DVC to run reproducible pipelines that can be shared.</li>
+                    <li>An Experiment tracking tool : ClearML is great for this and much more.</li>
+                    <li>A robust CI to deploy our model : Model performance unit tests to avoid regressions and Gitlab CI to push our model in a S3 bucket, record metadata in a DynamoDB and update the Sagemaker endpoint.</li>
+                </ul>
 
-                Adversarial context, regular updates from trends in frauds 
-
-                Dashboarding for business stakeholders and monitoring 
-
-
-                MLOps practices transition
-
+            </p>
             
 
-            <h3 style="margin-top: 50px;">A solid Tech Stack</h3>
             
                 <center><img src="img/fraud_article/all_mle_env.png" width="1000px" alt="mle_stack" style="margin-top: 5px; padding-top: 10px;"></center>
 
-                MLOps : Clearml, train on kubernetes cluster in jobs using dvc
-
-                <p>Summary of the project components:</p>
-                <ul>
-                    <li>Platform hosted on AWS</li>
-                    <li>Feature store with Spark flows</li>
-                    <li>Implementation of an ML model (XGBoost), on-premise servers, Kubernetes cluster.</li>
-                    <li>Big Monitoring (Tableau, Grafana)</li>
-                </ul>
-
             
+            <h3 style="margin-top: 50px; font-size:40px;">Last words</h3>
+            
+            <p>
+                This is just another story of Machine Learning models in production and as in others, ML models is only the tip 
+                of the iceberg. This use case also reminds us that Decision Trees still rock in business use cases and it is a must
+                to master classical ML algorithms.
+                <br>On top of modeling, there is so much to discover in MLOps, DevOps, Data Engineering, 
+                Software Engineering, making the Machine Learning Engineer role a wonderful place for curious and creative people.
+                I thank Ubisoft again for the opportunity of working on this project with such a great team !
+            </p>
 
             
 
