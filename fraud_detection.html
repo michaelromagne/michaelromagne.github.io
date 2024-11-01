@@ -51,7 +51,7 @@
 
         <section class="intro_article">
             <h1 class="section__title section__title--intro">
-                Combat fraudsters <strong> at Ubisoft</strong>
+                ML for Fraud Detection
             </h1>
             <p class="section__subtitle section__subtitle--intro">A recipe for online merchants.</p>
             <img src="img/generated_stuff/hacker.png" alt="" class="intro_article__img">
@@ -61,52 +61,43 @@
         <div class="portfolio-item-individual">
 
             <p>
-                During 3 years, I have immersed myself in the Gaming World at Ubisoft. The company has developed some of the most iconic video games with the Assassin's Creed series, Rainbow Six Siege, Far Cry, Rayman, Just Dance and many others, making it the french biggest video game studio and one of the major ones in the world.
-                
-                <br>From the start, Ubisoft has placed Innovation and Data at the center of its business. They started to track gaming metrics very early on, making it a rich place for Data practicioners :
-                recommendation systems, chat moderation, in-game cheater detection, in-game trained bots are examples of this diversity.
-
-                <br><br>At Ubisoft, my primary focus was <strong> E-commerce Fraud Detection</strong>. Ubisoft sells lots of games or in-game products (virtual currency, skins, DLCs) on their website, Ubiconnect gaming application and Gaming platforms like Steam.
-                Some of these products have a big success and are appealing for fraudsters, who seek buying them for "free" and reselling the products to real gamers with a big discount. This is a win-win transaction for them, but a big loss for the merchant.
-                In fact, most Payment Service Providers state that <strong>it is the responsibility of the e-commerce merchant to detect and block Fraud</strong>, and they may be charged if they do not do so. That's where Machine Learning comes into play.
+                During 3 years, I have immersed myself in the world of e-commerce Fraud Detection. E-commerce is still a wild world where merchants want to grow their business by selling their products online, but have to deal with malicious actors who seek buying them for "free" and reselling these products to real customers with a big discount.
+                This is a win-win transaction for them, but a big loss for the merchant. In fact, most Payment Service Providers state that <strong>it is the responsibility of the e-commerce merchant to detect and block Fraud</strong>, and they may be charged if they do not do so. That's where Machine Learning comes into play.
 
             </p>
         
-            <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud</h2>
+            <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud for merchants</h2>
             <br>            
             <img src="img/fraud_article/cgb.PNG" width="1000px" alt="Chargeback" style="margin-top: 5px; padding-top: 10px;">
             <br>
-            <p>First of all, it is worth diving in our definition of a Fraud. Let's assume a transaction made by a shopper in Ubisoft e-commerce ecosystem. 
-                Ubisoft receives funds, the goods are delivered to the customer/player and he can have fun.
+            <p>First of all, it is worth diving in the definition of a Fraud. Let's assume a transaction made by a shopper on a website. 
+                The merchant receives funds, the goods are delivered to the customer and life goes on.
                 For most transactions, that's it.
                 However in rare cases, several weeks or months later, a random cardholder may be surprised
-                by a Ubisoft charge on his bank account that he never intentionaly did and dispute it to his bank.
+                by an unknown charge on his bank account that he never intentionaly did and dispute it to his bank.
                 
                 In that case, the bank will initiate a <strong>chargeback</strong>,
-                that will be sent to Ubisoft through the card network. If Ubisoft can not show 
-                that the chargeback is an abuse from the cardholder, they have to return the funds 
-                to the cardholder, with <strong>additional chargeback fees</strong> charged by the <strong>Payment Service Provider</strong> 
-                (15euros in case of Paypal, 20 euros in case of Worldpay). On top of that, if an e-merchant is victim of too many frauds,
+                that will be sent to the merchant through the card network. If the merchant can not show 
+                that the chargeback is an abuse from the cardholder, he has to return the funds 
+                to the cardholder, with <strong>additional chargeback fees</strong> charged by the <strong>Payment Service Provider</strong> (a few dozens euros by transaction).
+                On top of that, if an e-merchant is victim of too many frauds,
                 the banks will accept less payments for this company, as illustrated by Microsoft in the figure below.
                 
                 <center><img src="img/fraud_article/acceptance_rate.PNG" width="800px" alt="acceptance" style="margin-top: 5px; padding-top: 10px;"></center>
 
                 <br>
-                When Ubisoft is aware of a fraud, they may not even be able to withdraw the product from the fraudster (shopper) account.
-                Virtual currency packs for instance are not revocable and represent 80 to 90 % of the in-game transactions, thus are highly targeted by fraud.
-                The malicious actors can then sell these products at a very low price and make a good margin.
-                
+                To make things even worse, when the e-merchant is aware of a fraud, he may not be able to withdraw the product from the fraudster (shopper) account.
+                This is particularly true in the case of physical products, but also for some virtual products.                
             </p>
 
 
-            <p>You can imagine how this money can be used, from isolated fraudsters trying to
+            <p>You can imagine how this money can then be used, from isolated fraudsters trying to
                 make easy money to organized groups willing to finance criminal organisations.
                 This is an ethical issue that businesses are willing to tackle. But the most important problem for these companies
                 is the <strong>exponential growth of the number of frauds</strong> when a breach is open.
                 That is what fraudsters are looking for : easy money with easy breaches. And as in every security domain, the
                 best defense for companies is too <strong>create as much friction as possible</strong> on the fraudster path,
                 to deter the malicious actor from attacking their business and make them attack other more vulnerable merchants.
-                
             </p>
 
             <h2 style="margin-top: 50px; font-size:40px;">How Machine Learning can help</h2>
@@ -115,148 +106,136 @@
             catching every single fraud</strong>. Be sure that if an attacker is motivated enough, he will manage to pass through your model or infrastructure.
             <br>For business stakeholders, this is sometimes hard to accept, as fraud raises strong feelings. Nobody wants to be victim of fraud.
             However, it is key to look at the cost of frauds and put the fear emotions in perspective.
-            Indeed, it may turn out that in some segments of your e-commerce business, fraud chargebacks are not that expensive. That is the case for Ubisoft on Steam in-game transactions for instance,
-            in which Steam is liable for frauds and do not forward chargebacks to game producers. In this case, you should be much more laxist : <strong>if you try to block more frauds, you will necesarily block more legit customers.</strong>
+            Indeed, it may turn out that in some segments of your e-commerce business, fraud chargebacks are not that expensive, depending on your Payment Service Provider agreement.
+            In this case, you should be much more laxist : <strong>if you try to block more frauds, you will necesarily block more legit customers.</strong>
 
             <center><img src="img/fraud_article/tp.png" width="400px" alt="tp" style="margin-top: 5px; padding-top: 10px;"></center>
 
             <br>
 
-            In these situations, you want to perform a <strong>cost analysis</strong> to evaluate your model and have an estimate of the Return On Investment of the project.
+            In these situations, you want to perform a <strong>cost analysis</strong> to evaluate your model impact and have an estimate of the Return On Investment of the project.
             You associate gains and loss to each decision of your model : how much money do you save when you block a fraudster ? How much do you lose when you block a legit customer ?
 
-            <br>In this project, <strong>the baseline is the performances of the product previously used to detect fraud</strong>.
-            We know that this tool manages to limit the chargeback rate at a low level but at the cost of a very high False Positive Rate.
-            This is due to complex handwritten hard rules, accumulated after years of fraud management by payment and fraud experts.
-            The rules are not versioned and the knowledge is almost only held by a single person, making it a perfect use case for ML success.
+            You may also be replacing an already existing fraud detection tool, usually a rule engine that has been in your company for years.
+            You can start by computing metrics like the fraud rate and the block rate of this system.
+            Then, you may notice that it is composed of complex handwritten hard rules, accumulated after years of fraud management by payment and fraud experts.
+            The rules are not versioned and the knowledge is only held by a few experts, making hard to interpret and maintain. This is a good use case for ML success.
 
             <br>
             <br>There are still some challenges to overcome: 
 
             <ul>
-                <li>We analyze all e-commerce transactions in real-time, with strict SLA : 200ms to respond process the payload, compute features and make the prediction.</li>
+                <li>The e-commerce transactions must be analyzed in real-time, with a very low latency (you have to compute the multiple features and run inference).</li>
                 <li>Adversarial context : Fraudsters will continuously adapt to beat your model.</li>
-                <li>As described in the chargeback flow, the fraud labels come from banks with a big delay, from several weeks to a few months. So our dataset labels are corrupted.</li>
-                <li>If we block a transaction in real time, we will never get label, because the payment is not completed.</li>
-                <li>We have very few frauds, leading to highly skewed datasets.</li>
+                <li>As described in the chargeback flow, the fraud labels come from banks with a big delay (from several weeks to a few months), so dataset labels are corrupted.</li>
+                <li>If a transaction is blocked in real time, you will never get any label, because the payment is not completed.</li>
+                <li>Ideally, there are very few frauds among all your transactions, leading to highly skewed datasets.</li>
             </ul>
 
             So the Machine Learning problem we are trying to solve has slightly evolved.
             We want to <strong>replace a rule-engine by a machine learning model</strong>, by taking advantage of a lot of transactional data, with the objective of <strong>controlling the chargeback rate and accept as many legit customers as possible.</strong>
 
         
-            <h3 style="margin-top: 50px; font-size:40px;">How Do We Tackle It?</h3>
+            <h3 style="margin-top: 50px; font-size:40px;">How can you tackle this problem?</h3>
 
             
             <h3 style="margin-top: 50px;">A Feature Store</h3>
                 <p>
-                Ubisoft has a lot of gaming and transactional data that Machine Learning Engineers can exploit.
-                For Fraud Detection, <strong>Feature Engineering is key</strong>. Thus, we spent a lot of time with Ubisoft
-                Fraud experts to determine the characteristics of each fraud attacks Ubisoft has undergone in its history.
-                Here are some risk factors we spotted and translated in features: 
+                Merchants can take advantage of their transactional data, thanks to Machine Learning.
+                For Fraud Detection, <strong>Feature Engineering is key</strong>. Thus, ML teams must spend time with
+                Fraud experts to determine the characteristics of each fraud attack that the merchant has undergone in its history.
+                Here are some risk factors that can be translated in features: 
                 
                 <ul>
                     <li>The customer already frauded in the past.</li>
-                    <li>A high "velocity" (high number of transactions) in a short amount of time.</li>
-                    <li>A high amount with an account created very recently.</li>
-                    <li>A player who used to play in the USA but the transaction is done in India.</li>
-                    <li>The customer deactivated his 2fa just before an expensive transaction with an unusual transaction country.</li>
+                    <li>A high number of transactions in a short amount of time.</li>
+                    <li>A high amount spent with an account created very recently.</li>
+                    <li>Surprising geographical information, not aligned with the customer history.</li>
                 </ul>
 
                 These features have to be computed in real-time, and require several table joins that take time. Thus, in order to
-                match the strict SLA, we needed to have an efficient way of getting these values. That's what a <strong>Feature Store</strong>
-                can bring. By computing parts of the features in daily batches, we can retrieve feature values much more rapidly.
-                For instance, you can add the timestamps of the new transactions that the customers made each day in an individual time series and maintain these arrays
-                of all transactions done by customers in tables. During inference, you just have to apply the feature function on those.
-                        
+                match the low latency criteria, you must have an efficient way of getting these values. That's what a <strong>Feature Store</strong>
+                can bring. By computing parts of the features prior to the transaction (in daily batches for features that allow it), you can retrieve feature values much more rapidly.                        
                 </p>
                 <p>
                     Futhermore, The Feature Store is a <strong>more reliable</strong> way of computing features for this kind of application:
                     the definitions are centralized, they are tested and the values are monitored. It ensures an alignment between offline (training)
                     and online (real-time inference) feature values.
-                    Below is a simple schema describing the Feature Store. If you want more detail, you can have a look at this <a href="https://www.youtube.com/watch?v=EmZIYcHGX9U">great talk</a>
-                    by Jeanine Harb, former Data Engineer in the team.
-                        
+                    Below is a simple schema describing a type of Feature Store. If you want more detail, you can have a look at this <a href="https://www.youtube.com/watch?v=EmZIYcHGX9U">great talk</a>
+                    by Jeanine Harb, Data Engineer.     
 
                     <center><img src="img/fraud_article/fsv2.png" width="1000px" alt="fsv2" style="margin-top: 5px; padding-top: 10px;"></center>
-                    </p>
+                </p>
 
 
             <h3 style="margin-top: 50px;">XGBoost for the win</h3>
                 
-                <br>In Fraud Detection, we have highly imbalanced datasets and delays in the identification of fraudulent transactions making our dataset corrupted.                 
-                For these reasons, we explored <strong>semi-supervised learning and weakly supervised learning</strong>, with <a href="https://arxiv.org/abs/1911.08623">Deviation Networks</a> for Anomaly Detection for instance.
-                We assumed that all our legit transactions, for which we did not receive any fraud flag yet, were actually unlabeled data. Indeed, they have a chance to be a fraud someday if someone complains to his bank.
-                The only sure labels are frauds because we had a chargeback from banks. Deviation networks push anomalies far from the normal data, attracting similar data points. When we use this algorithm, we assume that frauds are anomalies, meaning that some features differ from legit transactions.
-                Unfortunately apart from easy fraud patterns, most frauds do not vary a lot from normal data due to the adversarial behavior of fraudsters who try to mimick normal transactions.
-                Nevertheless, this exploration was valuable in order to analyze past data and dig in "legit" transactions looking similar to known frauds, allowing us to clean our dataset labels.
+                <br>In Fraud Detection, datasets are highly imbalanced and delays in the identification of fraudulent transactions make datasets corrupted.                 
+                For these reasons, <strong>semi-supervised learning and weakly supervised learning</strong> can be explored, with <a href="https://arxiv.org/abs/1911.08623">Deviation Networks</a> for Anomaly Detection for instance.
+                In these paradigms, it is assumed that all legit transactions in your dataset, for which you did not receive any fraud flag yet, are actually unlabeled data. Indeed, they have a chance to be a fraud someday if someone complains to his bank.
+                The only sure labels are frauds because you had a chargeback from banks. Deviation networks push anomalies far from the normal data distribution, attracting similar data points. In this algorithm, it is thus assumed that frauds are anomalies, meaning that some feature values differ from legit transactions.
+                Unfortunately apart from easy patterns, most frauds do not vary a lot from normal data due to the adversarial behavior of fraudsters. You have to continuously work on Feature Engineering to counter attack.
+                Nevertheless, this exploration is valuable in order to analyze past data and dig in "legit" transactions looking similar to known frauds, allowing you to clean your dataset labels.
 
-                <p>Despite many tests to improve performances, on tabular data <strong>the secret sauce remains having strong features correlated with fraud and train Gradient Boosted Trees</strong>.
-                We added a undersampling step to rebalance our dataset before optimising a XGBoost model, and we did not take the last few weeks of transactions in our training set as the data was too corrupted.
-                <strong>Feature Engineering</strong> and <strong>our collaboration with fraud experts</strong> has always been the most effective strategy to refine our model, ensuring its alignment with business objectives by catching fraud efficiently and accepting most of legit users.
+                <p>On tabular data, <strong>the secret sauce remains having strong features correlated with fraud patterns and train Gradient Boosted Trees</strong>.
+                Add undersampling to rebalance your dataset before optimising a XGBoost model, and do not take the last few weeks of transactions in your training set as the data is too corrupted.
+                <strong>Feature Engineering</strong> and <strong>collaboration with fraud experts</strong> is always the most effective strategy to refine your models, ensuring alignment with business objectives by catching fraud efficiently and accepting most of legit users.
                 </p>
                 
                 <p>
-                    Moreover, we used explainability tools such as <strong><a href="https://github.com/oegedijk/explainerdashboard">explainerdashboards</a></strong>.
-                    This is very convenient to debug our model, fully understand it and explain the model's decisions when there is a customer inquiry.
-                    On top of that, we added <strong>unit tests on key segments of our dataset</strong> to protect us against performance regression when we deploy a new model.
+                    Moreover, there are awesome explainability tools such as <strong><a href="https://github.com/oegedijk/explainerdashboard">explainerdashboards</a></strong>.
+                    This is very convenient to debug a tree-based model, fully understand it and explain the model's decisions when there is a customer inquiry.
+                    On top of that, you can lastly define <strong>unit tests on key segments of your dataset</strong> to protect you against performance regression when a new model is deployed.
 
                     <center><img src="img/fraud_article/explainer_dashboard.jpg" width="1000px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
                 </p>
 
-                Explainability is key for this project, so after moving from a very complex rule engine (previous product)
-                to a Machine Learning model with great Feature Engineering, we finally started to <strong>come back
-                to a rule engine</strong>, leveraging the pattern mining algorithm <strong>FP-growth</strong>. We get the associations of categorical features that 
-                happen the most with fraud. We then send these rules to the fraud experts who can validate them before going in production.
+                Explainability is key for Fraud Detection, so you may even prefer to <strong>tune a rule engine</strong>, leveraging the pattern mining algorithm <strong>FP-growth</strong> for instance. This algorithm gets the associations of categorical features that 
+                happen the most with fraud. You can then send these rules to the fraud experts who can validate them before going in production.
                 With a clean and tested rule registry and regularly updated rulesets, this approach is great.
                 It is used by Uber in their product <strong><a href="https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/">Uber RADAR</a></strong>.
                 
-                <br>To be complete on this Rule Engine vs Machine Learning subject, I would also like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's wonderful talk</a></strong>, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
+                <br>To be complete on this Rule Engine vs Machine Learning subject, I would also like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's talk</a></strong>, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
 
             
             <h3 style="margin-top: 50px;">Model evaluation and Business KPIs</h3>
 
             <p>
-                When a transaction is blocked, we do not get any label as the payment ends.
-                It means that we only have the labels for transactions that our model accepted, which will be fraud or legit.
+                When a transaction is blocked, the payment flow ends, thus you will get no label for it.
+                It means that you only have the labels for transactions that your model accepted, which will be fraud or legit.
                 In statistical terms, these are <strong>True Negatives</strong> (Legit transactions that were accepted by the model) and <strong>False Negatives</strong> (Frauds that were accepted by the model).
-                To compute Classification metrics, we also need some positive instances, things that were blocked by the model.
+                To compute classification metrics, you also need some positive instances, things that were blocked by the model.
                 
-                <br>Thus, we implemented a <strong>Control Group</strong> : For a subsample of all the transactions in a day, we will bypass the model decision and just log the Model score so that the payments of this subset are completed
-                and we can still analyze our model's decisions.
-                This allowed us to rigorously assess the impact of our fraud detection system and refine our strategies.
+                <br>A solution to overcome this challenge is the <strong>Control Group</strong> : For a subsample of all the transactions in a day, you bypass the model decision and just log the Model score so that the payments of this subset are completed
+                and you can analyze your model's decisions. Of course, you have to be careful on how you select the customers / transactions you select for the Control Group in order to forbid fraudsters from taking advantage of it.
+                This allows you to rigorously assess the impact of your fraud detection system and refine your strategies.
                 
                 <br>The concept of Control Group is extensively presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData talk</a>. 
             </p>
 
             <p>
-                In the end, the success of our project is reflected in key metrics such as a <strong>5% gain in net sales</strong> 
-                and the valuable time saved for fraud experts. Thanks to this project, we also noticed human errors made on the rule based system leading to an increase in false positives, and we decentralized knowledge so that the tool can be owned by more people.
-                Lastly, we <strong>replaced the third party tool on 80% of all PC transactions</strong>, a total of <strong>80M euros per year</strong>.
+                In the end, the success of Fraud Detection projects is reflected in key metrics such as a <strong>gain in net sales</strong> due to less legit transactions being blocked,
+                and the valuable time saved for fraud experts. You also decentralize knowledge so that the in-house tool can be owned by more people.
             </p>
-                
-                
 
 
             <h3 style="margin-top: 50px;">A Live product to support</h3>
 
             <p>
-                Now that the platform is ready and the model is deployed, the Fraud Detection product is live and the team has to maintain it.
-                First, It means <strong>Monitoring it</strong> using <strong>Grafana</strong> for real-time monitoring and <strong>Tableau</strong> for dashboarding as most people in the team and business stakeholders were familiar with it.
-                Alerts need to be set properly and thresholds fine tuned so that we can react as soon as possible when there is an incident (fraud attack, platform down...)
+                Now that your Fraud Detection model is deployed (and the platform is built), the Fraud Detection product is live and the team has to maintain it.
+                First, It means <strong>Monitoring it</strong> using tools like <strong>Grafana</strong> for real-time monitoring and <strong>Tableau</strong> or <strong>Streamlit</strong> for dashboards.
+                Alerts need to be set properly and thresholds fine tuned so that you can react as soon as possible when there is an incident (fraud attack, platform down...)
             </p>
             <p>
-                Then, it means having the good set of tool to <strong>retrain and deploy Machine Learning models</strong> when there is an emerging fraud pattern. For this, we need : 
+                Then, it means having the good set of tools to <strong>retrain and deploy Machine Learning models</strong> when there is an emerging fraud pattern. For this, you need : 
                 
                 <ul>
-                    <li>A tool to launch remote jobs on powerful Machines. Here we used Okteto which is adapted to our Kubernetes cluster, and DVC to run reproducible pipelines that can be shared.</li>
-                    <li>An Experiment tracking tool : ClearML is great for this and much more.</li>
-                    <li>A robust CI to deploy our model : Model performance unit tests to avoid regressions and Gitlab CI to push our model in a S3 bucket, record metadata in DynamoDB and update the Sagemaker endpoint.</li>
+                    <li>A tool to launch remote jobs on powerful Machines. You can use Skypilot or Okteto (Kubernetes only), and DVC to run reproducible pipelines with data versioning.</li>
+                    <li>An Experiment tracking tool : ClearML is great for this and much more. Mlflow is also a good option.</li>
+                    <li>A robust CI to deploy your models : Model performance unit tests to avoid regressions and Gitlab CI for the release jobs.</li>
                 </ul>
 
             </p>
-            
-
             
                 <center><img src="img/fraud_article/all_mle_env.png" width="1000px" alt="mle_stack" style="margin-top: 5px; padding-top: 10px;"></center>
 
@@ -269,7 +248,7 @@
                 to master classical ML algorithms.
                 <br>On top of modeling, there is so much to discover in <strong>MLOps, DevOps, Data Engineering, 
                 Software Engineering, making the Machine Learning Engineer role a wonderful place for curious and creative people</strong>.
-                <br>I thank Ubisoft again for the opportunity of working on this project with such a great team !
+                <br>
             </p>
 
             
