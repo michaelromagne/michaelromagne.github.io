@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link rel="icon" href="./img/logo.ico"/>
-        
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5MVLG6VZP"></script>
         <script>
@@ -15,7 +15,7 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Michaël Romagné | Machine Learning Engineer</title>
+        <title>ML for Fraud Detection | Michaël Romagné</title>
         <meta name="title" content="Michaël Romagné | Machine Learning Engineer"/>
         <meta name="description" content="MLE with a strong mathematical background, a problem-solving mindset and a passion for Football.">
         <meta name="keyword" content="MLE, Machine Learning, Machine Learning Engineer, Michaël, Michael, Romagné, Romagne, Football, Football Analytics, Soccer, Data Science, Data Scientist, Ubisoft, GitGuardian">
@@ -31,6 +31,34 @@
     </head>
 
     <body>
+        <!-- Window Titlebar -->
+        <div class="window-titlebar">
+            <span class="filepath">~/projects/portfolio/articles</span>
+            <span class="filename">fraud_detection.py</span>
+        </div>
+
+        <!-- Tab Bar Navigation -->
+        <nav class="main-nav">
+            <div class="tab-bar">
+                <a href="index.html" class="tab">
+                    <i class="fas fa-home tab-icon"></i>index.html
+                </a>
+                <a href="index.html#skills" class="tab">
+                    <i class="fas fa-code tab-icon"></i>skills.json
+                </a>
+                <a href="index.html#about" class="tab">
+                    <i class="fas fa-user tab-icon"></i>about.md
+                </a>
+                <a href="index.html#work" class="tab">
+                    <i class="fas fa-folder tab-icon"></i>projects.py
+                </a>
+                <a href="talks.html" class="tab">
+                    <i class="fas fa-microphone tab-icon"></i>talks.md
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hidden old header -->
         <header>
             <div class="logo">
                 <a href="index.html">
@@ -45,19 +73,18 @@
                     <li><a href="talks.html">Talks & Papers</a></li>
                 </ul>
             </nav>
-            
         </header>
-        
+
 
         <section class="intro_article">
             <h1 class="section__title section__title--intro">
                 ML for Fraud Detection
             </h1>
-            <p class="section__subtitle section__subtitle--intro">A recipe for online merchants.</p>
+            <p class="section__subtitle section__subtitle--intro">A recipe for online merchants</p>
             <img src="img/generated_stuff/hacker.png" alt="" class="intro_article__img">
             <p class="portfolio__info">Duration: 10 min | Date: Mar 13, 2024</p>
         </section>
-        
+
         <div class="portfolio-item-individual">
 
             <p>
@@ -65,29 +92,29 @@
                 This is a win-win transaction for them, but a big loss for the merchant. In fact, most Payment Service Providers state that <strong>it is the responsibility of the e-commerce merchant to detect and block Fraud</strong>, and they may be charged if they do not do so. That's where Machine Learning comes into play.
 
             </p>
-        
-            <h2 style="margin-top: 50px; font-size:40px;">The Risk of Fraud for merchants</h2>
-            <br>            
+
+            <h2 style="margin-top: 50px;">The Risk of Fraud for merchants</h2>
+            <br>
             <img src="img/fraud_article/cgb.PNG" width="1000px" alt="Chargeback" style="margin-top: 5px; padding-top: 10px;">
             <br>
-            <p>First of all, it is worth diving in the definition of a Fraud. Let's assume a transaction made by a shopper on a website. 
+            <p>First of all, it is worth diving in the definition of a Fraud. Let's assume a transaction made by a shopper on a website.
                 The merchant receives funds, the goods are delivered to the customer and life goes on.
                 For most transactions, that's it.
                 However in rare cases, several weeks or months later, a random cardholder may be surprised
                 by an unknown charge on his bank account that he never intentionaly did and dispute it to his bank.
-                
+
                 In that case, the bank will initiate a <strong>chargeback</strong>,
-                that will be sent to the merchant through the card network. If the merchant can not show 
-                that the chargeback is an abuse from the cardholder, he has to return the funds 
+                that will be sent to the merchant through the card network. If the merchant can not show
+                that the chargeback is an abuse from the cardholder, he has to return the funds
                 to the cardholder, with <strong>additional chargeback fees</strong> charged by the <strong>Payment Service Provider</strong> (a few dozens euros by transaction).
                 On top of that, if an e-merchant is victim of too many frauds,
                 the banks will accept less payments for this company, as illustrated by Microsoft in the figure below.
-                
+
                 <center><img src="img/fraud_article/acceptance_rate.PNG" width="800px" alt="acceptance" style="margin-top: 5px; padding-top: 10px;"></center>
 
                 <br>
                 To make things even worse, when the e-merchant is aware of a fraud, he may not be able to withdraw the product from the fraudster (shopper) account.
-                This is particularly true in the case of physical products, but also for some virtual products.                
+                This is particularly true in the case of physical products, but also for some virtual products.
             </p>
 
 
@@ -100,9 +127,9 @@
                 to deter the malicious actor from attacking their business and make them attack other more vulnerable merchants.
             </p>
 
-            <h2 style="margin-top: 50px; font-size:40px;">How Machine Learning can help</h2>
+            <h2 style="margin-top: 50px;">How Machine Learning can help</h2>
 
-            <p>The friction concept is interesting for Machine Learning Engineers. It means that <strong>we do not have to develop a perfect model 
+            <p>The friction concept is interesting for Machine Learning Engineers. It means that <strong>we do not have to develop a perfect model
             catching every single fraud</strong>. Be sure that if an attacker is motivated enough, he will manage to pass through your model or infrastructure.
             <br>For business stakeholders, this is sometimes hard to accept, as fraud raises strong feelings. Nobody wants to be victim of fraud.
             However, it is key to look at the cost of frauds and put the fear emotions in perspective.
@@ -122,7 +149,7 @@
             The rules are not versioned and the knowledge is only held by a few experts, making hard to interpret and maintain. This is a good use case for ML success.
 
             <br>
-            <br>There are still some challenges to overcome: 
+            <br>There are still some challenges to overcome:
 
             <ul>
                 <li>The e-commerce transactions must be analyzed in real-time, with a very low latency (you have to compute the multiple features and run inference).</li>
@@ -135,17 +162,17 @@
             So the Machine Learning problem we are trying to solve has slightly evolved.
             We want to <strong>replace a rule-engine by a machine learning model</strong>, by taking advantage of a lot of transactional data, with the objective of <strong>controlling the chargeback rate and accept as many legit customers as possible.</strong>
 
-        
-            <h3 style="margin-top: 50px; font-size:40px;">How can you tackle this problem?</h3>
 
-            
+            <h3 style="margin-top: 50px;">How can you tackle this problem?</h3>
+
+
             <h3 style="margin-top: 50px;">A Feature Store</h3>
                 <p>
                 Merchants can take advantage of their transactional data, thanks to Machine Learning.
                 For Fraud Detection, <strong>Feature Engineering is key</strong>. Thus, ML teams must spend time with
                 Fraud experts to determine the characteristics of each fraud attack that the merchant has undergone in its history.
-                Here are some risk factors that can be translated in features: 
-                
+                Here are some risk factors that can be translated in features:
+
                 <ul>
                     <li>The customer already frauded in the past.</li>
                     <li>A high number of transactions in a short amount of time.</li>
@@ -155,22 +182,22 @@
 
                 These features have to be computed in real-time, and require several table joins that take time. Thus, in order to
                 match the low latency criteria, you must have an efficient way of getting these values. That's what a <strong>Feature Store</strong>
-                can bring. By computing parts of the features prior to the transaction (in daily batches for features that allow it), you can retrieve feature values much more rapidly.                        
+                can bring. By computing parts of the features prior to the transaction (in daily batches for features that allow it), you can retrieve feature values much more rapidly.
                 </p>
                 <p>
                     Futhermore, The Feature Store is a <strong>more reliable</strong> way of computing features for this kind of application:
                     the definitions are centralized, they are tested and the values are monitored. It ensures an alignment between offline (training)
                     and online (real-time inference) feature values.
                     Below is a simple schema describing a type of Feature Store. If you want more detail, you can have a look at this <a href="https://www.youtube.com/watch?v=EmZIYcHGX9U">great talk</a>
-                    by Jeanine Harb, Data Engineer.     
+                    by Jeanine Harb, Data Engineer.
 
                     <center><img src="img/fraud_article/fsv2.png" width="1000px" alt="fsv2" style="margin-top: 5px; padding-top: 10px;"></center>
                 </p>
 
 
             <h3 style="margin-top: 50px;">XGBoost for the win</h3>
-                
-                <br>In Fraud Detection, datasets are highly imbalanced and delays in the identification of fraudulent transactions make datasets corrupted.                 
+
+                <br>In Fraud Detection, datasets are highly imbalanced and delays in the identification of fraudulent transactions make datasets corrupted.
                 For these reasons, <strong>semi-supervised learning and weakly supervised learning</strong> can be explored, with <a href="https://arxiv.org/abs/1911.08623">Deviation Networks</a> for Anomaly Detection for instance.
                 In these paradigms, it is assumed that all legit transactions in your dataset, for which you did not receive any fraud flag yet, are actually unlabeled data. Indeed, they have a chance to be a fraud someday if someone complains to his bank.
                 The only sure labels are frauds because you had a chargeback from banks. Deviation networks push anomalies far from the normal data distribution, attracting similar data points. In this algorithm, it is thus assumed that frauds are anomalies, meaning that some feature values differ from legit transactions.
@@ -181,7 +208,7 @@
                 Add undersampling to rebalance your dataset before optimising a XGBoost model, and do not take the last few weeks of transactions in your training set as the data is too corrupted.
                 <strong>Feature Engineering</strong> and <strong>collaboration with fraud experts</strong> is always the most effective strategy to refine your models, ensuring alignment with business objectives by catching fraud efficiently and accepting most of legit users.
                 </p>
-                
+
                 <p>
                     Moreover, there are awesome explainability tools such as <strong><a href="https://github.com/oegedijk/explainerdashboard">explainerdashboards</a></strong>.
                     This is very convenient to debug a tree-based model, fully understand it and explain the model's decisions when there is a customer inquiry.
@@ -190,14 +217,14 @@
                     <center><img src="img/fraud_article/explainer_dashboard.jpg" width="1000px" alt="exp" style="margin-top: 5px; padding-top: 10px;"></center>
                 </p>
 
-                Explainability is key for Fraud Detection, so you may even prefer to <strong>tune a rule engine</strong>, leveraging the pattern mining algorithm <strong>FP-growth</strong> for instance. This algorithm gets the associations of categorical features that 
+                Explainability is key for Fraud Detection, so you may even prefer to <strong>tune a rule engine</strong>, leveraging the pattern mining algorithm <strong>FP-growth</strong> for instance. This algorithm gets the associations of categorical features that
                 happen the most with fraud. You can then send these rules to the fraud experts who can validate them before going in production.
                 With a clean and tested rule registry and regularly updated rulesets, this approach is great.
                 It is used by Uber in their product <strong><a href="https://www.uber.com/en-FR/blog/project-radar-intelligent-early-fraud-detection/">Uber RADAR</a></strong>.
-                
+
                 <br>To be complete on this Rule Engine vs Machine Learning subject, I would also like to share <strong><a href="https://www.youtube.com/watch?v=uk9ugHHrZps">Jeremy Jordan's talk</a></strong>, one of the best I have seen as he sums up all the aspects of applying ML in Security, showcasing that the Rule Engine should be the basis of these systems.
 
-            
+
             <h3 style="margin-top: 50px;">Model evaluation and Business KPIs</h3>
 
             <p>
@@ -205,12 +232,12 @@
                 It means that you only have the labels for transactions that your model accepted, which will be fraud or legit.
                 In statistical terms, these are <strong>True Negatives</strong> (Legit transactions that were accepted by the model) and <strong>False Negatives</strong> (Frauds that were accepted by the model).
                 To compute classification metrics, you also need some positive instances, things that were blocked by the model.
-                
+
                 <br>A solution to overcome this challenge is the <strong>Control Group</strong> : For a subsample of all the transactions in a day, you bypass the model decision and just log the Model score so that the payments of this subset are completed
                 and you can analyze your model's decisions. Of course, you have to be careful on how you select the customers / transactions you select for the Control Group in order to forbid fraudsters from taking advantage of it.
                 This allows you to rigorously assess the impact of your fraud detection system and refine your strategies.
-                
-                <br>The concept of Control Group is extensively presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData talk</a>. 
+
+                <br>The concept of Control Group is extensively presented by Stripe in <a href="https://www.youtube.com/watch?v=rHSpab1Wi9k&t=1604s">a PyData talk</a>.
             </p>
 
             <p>
@@ -227,8 +254,8 @@
                 Alerts need to be set properly and thresholds fine tuned so that you can react as soon as possible when there is an incident (fraud attack, platform down...)
             </p>
             <p>
-                Then, it means having the good set of tools to <strong>retrain and deploy Machine Learning models</strong> when there is an emerging fraud pattern. For this, you need : 
-                
+                Then, it means having the good set of tools to <strong>retrain and deploy Machine Learning models</strong> when there is an emerging fraud pattern. For this, you need :
+
                 <ul>
                     <li>A tool to launch remote jobs on powerful Machines. You can use Skypilot or Okteto (Kubernetes only), and DVC to run reproducible pipelines with data versioning.</li>
                     <li>An Experiment tracking tool : ClearML is great for this and much more. Mlflow is also a good option.</li>
@@ -236,25 +263,25 @@
                 </ul>
 
             </p>
-            
+
                 <center><img src="img/fraud_article/all_mle_env.png" width="1000px" alt="mle_stack" style="margin-top: 5px; padding-top: 10px;"></center>
 
-            
-            <h3 style="margin-top: 50px; font-size:40px;">Last words</h3>
-            
+
+            <h3 style="margin-top: 50px;">Last words</h3>
+
             <p>
-                This is just another story of Machine Learning models in production showing that <strong>Modeling is only the tip 
+                This is just another story of Machine Learning models in production showing that <strong>Modeling is only the tip
                 of the iceberg</strong> in production use cases. It also reminds us that Decision Trees still rock in business and it is a must have skill
                 to master classical ML algorithms.
-                <br>On top of modeling, there is so much to discover in <strong>MLOps, DevOps, Data Engineering, 
+                <br>On top of modeling, there is so much to discover in <strong>MLOps, DevOps, Data Engineering,
                 Software Engineering, making the Machine Learning Engineer role a wonderful place for curious and creative people</strong>.
                 <br>
             </p>
 
-            
+
 
         </div>
-        
+
         <!-- Footer -->
         <footer class="footer">
             <a href="mailto:michael.romagne@gmail.com" class="footer__link">michael.romagne@gmail.com</a>
@@ -276,9 +303,9 @@
                 </li>
             </ul>
         </footer>
-        
-        
+
+
         <script src="js/index.js"></script>
-        
+
     </body>
 </html>

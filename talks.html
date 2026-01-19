@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link rel="icon" href="./img/logo.ico"/>
-        
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5MVLG6VZP"></script>
         <script>
@@ -15,7 +15,7 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Michaël Romagné | Machine Learning Engineer</title>
+        <title>Talks & Papers | Michaël Romagné</title>
         <meta name="title" content="Michaël Romagné | Machine Learning Engineer"/>
         <meta name="description" content="MLE with a strong mathematical background, a problem-solving mindset and a passion for Football.">
         <meta name="keyword" content="MLE, Machine Learning, Machine Learning Engineer, Michaël, Michael, Romagné, Romagne, Football, Football Analytics, Soccer, Data Science, Data Scientist, Ubisoft, GitGuardian">
@@ -31,6 +31,34 @@
     </head>
 
     <body>
+        <!-- Window Titlebar -->
+        <div class="window-titlebar">
+            <span class="filepath">~/projects/portfolio</span>
+            <span class="filename">talks.md</span>
+        </div>
+
+        <!-- Tab Bar Navigation -->
+        <nav class="main-nav">
+            <div class="tab-bar">
+                <a href="index.html" class="tab">
+                    <i class="fas fa-home tab-icon"></i>index.html
+                </a>
+                <a href="index.html#skills" class="tab">
+                    <i class="fas fa-code tab-icon"></i>skills.json
+                </a>
+                <a href="index.html#about" class="tab">
+                    <i class="fas fa-user tab-icon"></i>about.md
+                </a>
+                <a href="index.html#work" class="tab">
+                    <i class="fas fa-folder tab-icon"></i>projects.py
+                </a>
+                <a href="talks.html" class="tab tab--active">
+                    <i class="fas fa-microphone tab-icon"></i>talks.md
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hidden old header -->
         <header>
             <div class="logo">
                 <a href="index.html">
@@ -45,18 +73,17 @@
                     <li><a href="talks.html">Talks & Papers</a></li>
                 </ul>
             </nav>
-            
         </header>
 
     <section class="talks">
         <div class="talks-container">
             <h2 class="section__title section__title--about">Talks & Papers</h2>
 
-            <p>I want to give a shout-out to people who have made these enlightening talks, blog posts and papers.</p>
-            
+            <p>Enlightening talks, blog posts and papers.</p>
+
             <br>
 
-            <h3 class="section__title section__title--about">Tech</h3>
+            <h3 class="section__title">Tech</h3>
 
 
             <ul class="talk-list">
@@ -66,16 +93,14 @@
                     </div>
                     <div class="talk-speaker">Dylan Beattie</div>
                     <p class="talk-description">
-                        <i>“I've come up with a set of rules that describe our reactions to technologies:<br>1. Anything that is in the world when you’re born is normal and ordinary and is just a natural part of the way the world works.
-                            <br>2. Anything that's invented between when you’re fifteen and thirty-five is
+                        <i>"I've come up with a set of rules that describe our reactions to technologies:<br>1. Anything that is in the world when you're born is normal and ordinary and is just a natural part of the way the world works.
+                            <br>2. Anything that's invented between when you're fifteen and thirty-five is
                             new and exciting and revolutionary and you can probably get a career in
                             it.
-                            <br>3. Anything invented after you're thirty-five is against the natural order of things."</i> <br>― Douglas Adams
-                            <br>An alternative history of the World Wide Web, in which technologies that we take for granted are questioned, in a hilarious talk.
+                            <br>3. Anything invented after you're thirty-five is against the natural order of things."</i> <br>- Douglas Adams
+                            <br><br>An alternative history of the World Wide Web, in which technologies that we take for granted are questioned, in a hilarious talk.
                     </p>
                 </li>
-
-                <br>
 
                 <li class="talk">
                     <div class="talk-title">
@@ -87,19 +112,15 @@
                     </p>
                 </li>
 
-                <br>
-
                 <li class="talk">
                     <div class="talk-title">
-                        <a href=https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html target="_blank">Well architected Machine Learning</a>
+                        <a href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html" target="_blank">Well architected Machine Learning</a>
                     </div>
                     <div class="talk-speaker">AWS Solution Architects</div>
                     <p class="talk-description">
                         Ensemble of important considerations regarding ML projects, with AWS as a cloud provider.
                     </p>
                 </li>
-
-                <br>
 
                 <li class="talk">
                     <div class="talk-title">
@@ -110,8 +131,6 @@
                         Inspiring article on collaboration between LLM and heuristics (parsing, rules, checks...) to fix security vulnerabilities. These insights are great because the process is very close to what we do at GitGuardian on automatical code fixing for secret detection.
                     </p>
                 </li>
-
-                <br>
 
                 <li class="talk">
                     <div class="talk-title">
@@ -126,5 +145,30 @@
             </ul>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:michael.romagne@gmail.com" class="footer__link">michael.romagne@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/michael-romagne/">
+                    <i class="fab fa-linkedin"></i>
+            </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/MichaelRomagne">
+                <i class="fab fa-github"></i>
+            </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://twitter.com/MichaelRomagne">
+                <i class="fab fa-twitter"></i>
+            </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+
 </body>
 </html>

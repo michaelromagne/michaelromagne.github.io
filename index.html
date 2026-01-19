@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link rel="icon" href="./img/logo.ico"/>
-        
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5MVLG6VZP"></script>
         <script>
@@ -34,6 +34,34 @@
     </head>
 
     <body>
+        <!-- Window Titlebar -->
+        <div class="window-titlebar">
+            <span class="filepath">~/projects/portfolio</span>
+            <span class="filename">portfolio.md</span>
+        </div>
+
+        <!-- Tab Bar Navigation -->
+        <nav class="main-nav">
+            <div class="tab-bar">
+                <a href="#home" class="tab tab--active">
+                    <i class="fas fa-home tab-icon"></i>index.html
+                </a>
+                <a href="#skills" class="tab">
+                    <i class="fas fa-code tab-icon"></i>skills.json
+                </a>
+                <a href="#about" class="tab">
+                    <i class="fas fa-user tab-icon"></i>about.md
+                </a>
+                <a href="#work" class="tab">
+                    <i class="fas fa-folder tab-icon"></i>projects.py
+                </a>
+                <a href="talks.html" class="tab">
+                    <i class="fas fa-microphone tab-icon"></i>talks.md
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hidden old header -->
         <header>
             <div class="logo">
                 <a href="#">
@@ -56,10 +84,10 @@
                 Hi, I am <strong>Michaël Romagné</strong>
             </h1>
             <div class="section__subtitle section__subtitle--intro">
-                <span href="" class="typewrite" data-period="2000" data-type='["I am a Machine Learning Engineer.", "GenAI, NLP, MLOps, DevOps.", "5 years bringing ML to production."]'></span>
+                <span href="" class="typewrite" data-period="2000" data-type='["Machine Learning Engineer", "GenAI | NLP | MLOps | DevOps", "5 years bringing ML to production"]'></span>
             </div>
             <img src="img/michael.jpg" alt="Plouneour" class="intro__img">
-            
+
             <div class="intro__social">
                 <a href="mailto:michael.romagne@gmail.com" class="intro__social-list__link">michael.romagne@gmail.com</a>
                 <ul class="intro__social-list">
@@ -80,18 +108,18 @@
                     </li>
                 </ul>
             </div>
-            <br><p class="intro__desc">
+            <p class="intro__desc">
                 Machine Learning Engineer with 5 years of experience helping companies bring ML projects to production through robust MLOps practices.
             </p>
-        </section>        
-        
-        
+        </section>
+
+
         <!-- My skills -->
         <section class="my-skills" id="skills">
             <h2 class="section__title section__title--skills">My Skills</h2>
             <div class="skills">
-                <div class="skills-container">                
-      
+                <div class="skills-container">
+
                      <div class="skills-box">
                         <div class="skills-title">
                         <div class="skills-img">
@@ -100,7 +128,7 @@
                          <h3>Data Science</h3>
                          </div>
                          <div class="skills-text">
-                            <P> ML, NLP, GenAI, PyTorch, AWS Bedrock, HuggingFace, ONNX  </P>
+                            <p>ML, NLP, GenAI, PyTorch, AWS Bedrock, HuggingFace, ONNX</p>
                         </div>
                     </div>
 
@@ -112,10 +140,10 @@
                             <h3>MLOps</h3>
                         </div>
                         <div class="skills-text">
-                            <P> W&B Weave, Skypilot, DVC, BentoML, ClearML, Mlflow</P>
+                            <p>W&B Weave, Skypilot, DVC, BentoML, ClearML, Mlflow</p>
                         </div>
                     </div>
-                    
+
 
                     <div class="skills-box">
                         <div class="skills-title">
@@ -125,7 +153,7 @@
                             <h3>DevOps</h3>
                         </div>
                         <div class="skills-text">
-                            <P>Docker, Gitlab CI, Kubernetes, Helm, Argo CD, Terraform</P>
+                            <p>Docker, Gitlab CI, Kubernetes, Helm, Argo CD, Terraform</p>
                         </div>
                     </div>
 
@@ -137,22 +165,22 @@
                         <h3>AWS</h3>
                         </div>
                         <div class="skills-text">
-                            <P> Lambda, Step Functions, Batch, EKS, ECS, Sagemaker, S3, Bedrock  </P>
+                            <p>Lambda, Step Functions, Batch, EKS, ECS, Sagemaker, S3, Bedrock</p>
                         </div>
-                    </div> 
-                    
+                    </div>
+
                     <div class="skills-box">
                         <div class="skills-title">
                         <div class="skills-img">
                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="" class="skills-icons">
                          </div>
-                         <h3>Software dev</h3>
+                         <h3>Software Dev</h3>
                          </div>
                          <div class="skills-text">
-                         <p> Python expert, Django, Celery, FastAPI, uv</p>   
+                         <p>Python expert, Django, Celery, FastAPI, uv</p>
                          </div>
                     </div>
-                    
+
 
                     <div class="skills-box">
                         <div class="skills-title">
@@ -162,10 +190,10 @@
                             <h3>Data Viz</h3>
                         </div>
                         <div class="skills-text">
-                            <P> Streamlit, Grafana, Kibana, Tableau  </P>
+                            <p>Streamlit, Grafana, Kibana, Tableau</p>
                         </div>
                     </div>
-                     
+
                     <div class="skills-box">
                      <div class="skills-title">
                      <div class="skills-img">
@@ -174,104 +202,89 @@
                       <h3>Data Engineering</h3>
                     </div>
                     <div class="skills-text">
-                    <P> Temporal, Dagster, Airflow, Hadoop, Spark, Snowflake</P>
+                    <p>Temporal, Dagster, Airflow, Hadoop, Spark, Snowflake</p>
                     </div>
                     </div>
-                                   
-                 
-                     
+
+
+
                      </div>
-            </div> 
+            </div>
             <a href="#work" class="btn">My work</a>
         </section>
-        
-        
-        
+
+
+
         <!-- About me -->
         <section class="about-me" id="about">
             <h2 class="section__title section__title--about">Who I am</h2>
 
-            <div class="about-me__body">
-                <p>I'm a Freelance Machine Learning Engineer with 5 years of experience helping companies bring ML projects to production through robust MLOps practices. I provide expert guidance in ML, NLP, and GenAI, crafting and deploying state-of-the-art models for complex challenges.
-            </p>
-                <p>I worked at Ubisoft for three years deploying Machine Learning models to detect in-game fraudulent transactions. This experience taught me how to manage end-to-end Machine Learning projects, with in-depth exploration of Infrastructure, Data Engineering and MLOps matters. The project led to 5% of net sales savings, about 4 million euros per year.
-            </p>
-                <p>Then, I joined GitGuardian as a Machine Learning Engineer, where I built the MLOps stack from scratch using GitLab CI, SkyPilot, DVC, Dagster, BentoML, Helm, and ArgoCD. I fine-tuned and integrated NLP models (CodeBERTa) into the Secrets Detection Engine, reducing false positives by 5x. I also developed automated secret leakage remediation using AST parsers and OpenAI API.
-            </p>
-                <p>Following GitGuardian, I started working as a Freelance MLOps Engineer at Sanofi, focusing on GenAI and LLMOps. I developed an Unstructured Data Pipeline (OCR+VLM with Docling, AWS Textract, and Bedrock) deployed via Terraform, and I'm onboarding teams on W&B Weave for GenAI experiments and LLM monitoring. I also work on an AI Agents Gateway project for Sanofi.
-                </p>
-                <p>In my free time, I'm passionate about Football and data analytics. I built <a href="https://the-scouting-arena.com" class="about_me__social-list__link" target="_blank">The Scouting Arena</a>, a platform helping football fans discover and scout new players using advanced analytics and visualizations.
-                </p>
-                <p>If you want to have a talk, please contact me on <a href="https://www.linkedin.com/in/michael-romagne/" class="about_me__social-list__link">Linkedin</a> or at <a href="mailto:michael.romagne@gmail.com" class="about_me__social-list__link">michael.romagne@gmail.com</a>.
-                </p>
+            <div class="about-me__body line-numbers">
+                <p>I'm a <span class="syntax-keyword">Machine Learning Engineer</span> with a strong mathematical background. My path to Data Science began when I realized the vast potential of applying mathematical concepts to real business challenges.</p>
+
+                <p>I sharpened my skills at <span class="syntax-string">Ubisoft</span>, where I learned to manage end-to-end ML projects, diving deep into Infrastructure, Data Engineering and MLOps.</p>
+                
+                <p>Then at <span class="syntax-string">GitGuardian</span>, I fine-tuned Transformer models for code security and built the MLOps stacks of the company from scratch.</p>
+
+                <p>After these experiences, I wanted to try the <span class="syntax-keyword">freelance path</span> to continue growing in ownership and expand my skills. I joined <span class="syntax-string">Sanofi</span> to work on GenAI challenges: building scalable Unstructured Data parsing pipelines, benchmarking Vision-Language Models, and making unstructured knowledge accessible at scale.</p>
+
+                <p>In my free time, I'm passionate about <span class="syntax-function">Football</span> and data analytics. I built <a href="https://the-scouting-arena.com" class="about_me__social-list__link" target="_blank">The Scouting Arena</a>, a platform helping football fans discover and scout players using advanced analytics.</p>
+
+                <p>If you want to have a talk, reach out on <a href="https://www.linkedin.com/in/michael-romagne/" class="about_me__social-list__link">Linkedin</a> or at <a href="mailto:michael.romagne@gmail.com" class="about_me__social-list__link">michael.romagne@gmail.com</a>.</p>
             </div>
-            
+
             <img src="img/foot_picture.jpg" alt="Michou" width="300" class="about-me__img">
 
             <div class="timeline">
                 <div class="outer">
                 <div class="card">
                     <div class="info">
-                    <h3 class="title">Sanofi - MLOps Engineer | GenAI, LLMOps</h3>
+                    <h3 class="title"><span class="syntax-string">Sanofi</span> - <span class="syntax-keyword">MLOps Engineer</span> | GenAI, LLMOps</h3>
                     <span class="date">Dec 2024 - Present</span>
-                    <p>- Development of an Unstructured Data Pipeline (OCR+VLM with Docling, AWS Textract, and Bedrock, metadata generation, chunking, vectorization), deployed for Sanofi teams via a Terraform module.<br>- Share LLMOps best practices for GenAI teams at Sanofi : Weave, LLM as Judge, Experimentations...<br>- Work on defining an AI Agents Gateway for Sanofi.</p>
+                    <p>- Development of an Unstructured Data Pipeline (OCR+VLM with Docling, AWS Textract, Bedrock VLMs, metadata generation with LLMs, chunking, vectorization), processing millions of PDFs for Sanofi teams.<br>- Developed an internal benchmarking framework with DVC & Weave to compare open-source OCR libraries and VLMs for unstructured data extraction.<br>- Define MLOps best practices for GenAI teams at Sanofi.<br>- Develop AI agents for employee companion use case with LangGraph.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="info">
-                    <h3 class="title">GitGuardian - MLE</h3>
+                    <h3 class="title"><span class="syntax-string">GitGuardian</span> - <span class="syntax-keyword">MLE</span></h3>
                     <span class="date">Oct 2023 - Dec 2024</span>
-                    <p>- Built the MLOps stack from scratch: GitLab CI, SkyPilot, DVC pipelines, Dagster jobs, Streamlit, ONNX Runtime, BentoML, Helm, ArgoCD.<br>- Fine-tuned and integrated NLP models (CodeBERTa) into the Secrets Detection Engine, reducing false positives by 5x (Django, Celery, Kubernetes, AWS).<br>- Developed PoCs on automatic remediation for leaked secrets (OpenAI API, AST parsers and code formatting).</p>
+                    <p>- Built the MLOps stack from scratch: GitLab CI, SkyPilot, DVC pipelines, Dagster jobs, Streamlit, ONNX Runtime, BentoML, Helm, ArgoCD.<br>- Fine-tuned and integrated NLP models (CodeBERTa) into the Secrets Detection Engine, reducing false positives by <span class="syntax-function">5x</span> (Django, Celery, Kubernetes, AWS).<br>- Developed PoCs on automatic remediation for leaked secrets (OpenAI API, AST parsers and code formatting).</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="info">
-                    <h3 class="title">Ubisoft - MLE</h3>
+                    <h3 class="title"><span class="syntax-string">Ubisoft</span> - <span class="syntax-keyword">MLE</span></h3>
                     <span class="date">Feb 2021 - Oct 2023</span>
-                    <p>- End-to-end Fraud Detection project in e-commerce transactions (Ubi Connect and Steam).<br>Led Research tasks (Feature Engineering, Semi-supervised learning) and put in place MLOps best practices (DVC, remote jobs on K8s, ClearML, model inference on AWS).<br>The project led to 5% of net sales savings, about 4 millions euros per year, compared to the previous fraud detection product.</p>
+                    <p>- End-to-end Fraud Detection project in e-commerce transactions (Ubi Connect and Steam).<br>Led Research tasks (Feature Engineering, Semi-supervised learning) and put in place MLOps best practices (DVC, remote jobs on K8s, ClearML, model inference on AWS).<br>The project led to <span class="syntax-function">5% of net sales savings</span>, about <span class="syntax-number">4 millions euros</span> per year, compared to the previous fraud detection product.</p>
                     <p>- Time Series forecasting on Acquisition, Retention, Monetization and Ubisoft servers vCPU usage. Trained and deployed Generalized Additive Models to improve forecasts.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="info">
-                    <h3 class="title">Stackeo - DS intern</h3>
-                    <span class="date">Jun 2020 - Dec 2020</span>
-                    <p>Research on Digital Twins to optimize IoT Systems. Data Science, Simulation and Monitoring of IoT systems.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="info">
-                    <h3 class="title">Orange Labs - DS intern</h3>
-                    <span class="date">Jan 2019 - Jun 2019</span>
-                    <p>NLP on Orange mobile phone and internet boxes logs to predict churn and customer satisfaction.</p>
                     </div>
                 </div>
                 </div>
             </div>
-  
-  
+
+
 
         </section>
 
 
-        
+
 
 
         <!-- My work -->
         <section class="my-work" id="work">
-            <h2 class="section__title section__title--work">My projects</h2>
+            <h2 class="section__title section__title--work">projects</h2>
             <p class="section__subtitle section__subtitle--work"></p>
-            
+
             <div class="portfolio__filters">
-                <button class="show-all-button">All</button>
+                <button class="show-all-button active">All</button>
                 <button class="tag-filter" data-tag="Fraud Detection">Fraud Detection</button>
                 <button class="tag-filter" data-tag="Machine Learning">Machine Learning</button>
                 <button class="tag-filter" data-tag="NLP">NLP</button>
                 <button class="tag-filter" data-tag="MLOps">MLOps</button>
                 <button class="tag-filter" data-tag="Football Analytics">Football Analytics</button>
             </div>
-            
-            
+
+
 
             <div class="portfolio">
                 <!-- portfolio item 1 -->
@@ -304,9 +317,9 @@
                             <span class="portfolio__tag">MLOps</span>
                             <span class="portfolio__tag">NLP</span>
                             <span class="portfolio__tag">Machine Learning</span>
-                            <h3 class="portfolio__title">GitGuardian’s MLOps Open-Source Stack</h3>
+                            <h3 class="portfolio__title">GitGuardian's MLOps Open-Source Stack</h3>
                             <p class="portfolio__summary">The stack we implemented for NLP use cases at GitGuardian.</p>
-                            <p class="portfolio__info"> Duration: 10 min | November 28th 2024</p>
+                            <p class="portfolio__info">Duration: 10 min | November 28th 2024</p>
                         </div>
                     </div>
                 </a>
@@ -324,8 +337,8 @@
                             <span class="portfolio__tag">NLP</span>
                             <span class="portfolio__tag">Machine Learning</span>
                             <h3 class="portfolio__title">A gentle journey to LLMops : Zilliz AOC</h3>
-                            <p class="portfolio__summary">Come aboard to discover emerging Open Source MLOps tools and build the best ML stack !</p>
-                            <p class="portfolio__info"> Duration: 13 min | January 3rd 2024</p>
+                            <p class="portfolio__summary">Come aboard to discover emerging Open Source MLOps tools and build the best ML stack!</p>
+                            <p class="portfolio__info">Duration: 13 min | January 3rd 2024</p>
                         </div>
                     </div>
                 </a>
@@ -343,8 +356,8 @@
                             <span class="portfolio__tag">Machine Learning</span>
                             <span class="portfolio__tag">MLOps</span>
                             <h3 class="portfolio__title">ML for Fraud Detection</h3>
-                            <p class="portfolio__summary">Recipe to limit fraud for online merchants. </p>
-                            <p class="portfolio__info"> Duration: 10 min | Date: Sept 30, 2023</p>
+                            <p class="portfolio__summary">Recipe to limit fraud for online merchants.</p>
+                            <p class="portfolio__info">Duration: 10 min | Sept 30, 2023</p>
                         </div>
                     </div>
                 </a>
@@ -353,7 +366,7 @@
         </section>
 
 
-        <!-- Footer -->
+        <!-- Footer / Status Bar -->
         <footer class="footer">
             <a href="mailto:michael.romagne@gmail.com" class="footer__link">michael.romagne@gmail.com</a>
             <ul class="social-list">
@@ -376,8 +389,36 @@
         </footer>
 
         <script src="js/index.js"></script>
-    
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
-        
+
+        <!-- Tab active state script -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab[href^="#"]');
+            const sections = document.querySelectorAll('section[id]');
+
+            function updateActiveTab() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tabs.forEach(tab => {
+                    tab.classList.remove('tab--active');
+                    if (tab.getAttribute('href') === '#' + current) {
+                        tab.classList.add('tab--active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveTab);
+            updateActiveTab();
+        });
+        </script>
+
     </body>
 </html>
